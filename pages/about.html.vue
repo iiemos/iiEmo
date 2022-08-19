@@ -201,4 +201,9 @@ useHead({
 ._info_item_ctx {
   padding: 8px 14px 8px 20px;
 }
+@media screen and (max-width: 768px) {
+  ._my_info,._code_warp{
+    width: 85%;
+  }
+}
 </style>

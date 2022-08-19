@@ -63,4 +63,9 @@ const copyEmoji = async (e: any) => {
     background: #e0dede;
   }
 }
+@media screen and (max-width: 768px) {
+  ._emoji_ctx{
+    width: 90%;
+  }
+}
 </style>

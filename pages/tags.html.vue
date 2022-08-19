@@ -63,4 +63,9 @@ function t() {
     transform: translateY(-2px);
   }
 }
+@media screen and (max-width: 768px) {
+  ._tags_ctx{
+    width: 90%;
+  }
+}
 </style>

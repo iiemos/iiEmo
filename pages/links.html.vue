@@ -10,9 +10,11 @@ const { linkSite, mirrorSite } = links
           友链<span class="text-sm ml-1">(9)</span>
         </h1>
         <div :class="$style['_links_warp']" class="">
-          <div
+          <nuxt-link
             v-for="lItem in linkSite"
             :key="lItem.name"
+            :to="lItem.link"
+            target="_blcak"
             :class="$style['_link_item']"
             class="shadow-md px-4 py-4"
             :style="{
@@ -48,7 +50,7 @@ const { linkSite, mirrorSite } = links
                 添加时间： {{ lItem.addTime }}
               </div>
             </div>
-          </div>
+          </nuxt-link>
         </div>
       </div>
       <div :class="$style['_link_box']" class="mt-10">
@@ -157,5 +159,16 @@ const { linkSite, mirrorSite } = links
 }
 ._link_time {
   opacity: 0.5;
+}
+@media screen and (max-width: 768px) {
+  .iiemo_links{
+    width: 90%;
+  }
+  ._links_warp{
+    flex-direction: column;
+  }
+  ._link_item{
+    width: 100%;
+  }
 }
 </style>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-// import { ElSwitch } from 'element-plus'
-// import { Menu, List } from '@element-plus/icons-vue'
+import { ElSwitch } from 'element-plus'
+import { Menu, List } from '@element-plus/icons-vue'
 import { storeToRefs } from 'pinia'
 let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore()) 
 </script>
@@ -12,13 +12,15 @@ let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore())
     <h5 class="text-xl fw-600">
       全部文章 <span class="text-sm ml-1">(66)</span>
     </h5>
-    <!-- <el-switch
-      v-model="isHorizontal"
-      size="default"
-      :active-icon="List"
-      :inactive-icon="Menu"
-      style="--el-switch-on-color: #13ce66"
-    /> -->
+    <div :class="$style['content_switch']">
+      <el-switch
+        v-model="isHorizontal"
+        size="default"
+        :active-icon="List"
+        :inactive-icon="Menu"
+        style="--el-switch-on-color: #13ce66"
+      />
+    </div>
   </div>
 </template>
 
@@ -30,6 +32,12 @@ let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore())
   h5 {
     display: flex;
     align-items: baseline;
+  }
+
+}
+@media screen and (max-width: 768px) {
+  .content_switch{
+    display: none;
   }
 }
 </style>

@@ -227,4 +227,30 @@ data.value.forEach((i)=>{ typeList.forEach((e)=>{ if( e.id == i.summary.type ) e
   align-items: center;
   justify-content: center;
 }
+@media screen and (max-width: 768px) {
+  .home_type{
+    padding: 0 20px;
+  }
+  .pen_card{
+    flex-direction: column;
+    .pen_card_item {
+      flex-direction: column-reverse;
+    }
+    ._text_warp {
+      margin-top: 20px;
+      margin-left: 0px;
+    }
+    ._img_warp {
+      margin: 0 auto;
+      width: 240px;
+      height: 160px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      img {
+        width: 240px;
+        height: 160px;
+      }
+    }
+  }
+}
 </style>

@@ -35,7 +35,7 @@ function t() {
   <NuxtLayout>
   <div :class="$style['_categs_ctx']" class="mx-auto shadow-lg">
     <!-- 分类 -->
-    <el-timeline>
+    <el-timeline :class="$style['_categs_timeline']">
       <el-timeline-item v-for="item in typeList" :key="item.id" :timestamp="item.id" placement="top" size="normal" type="primary" :hollow="true">
         <nuxt-link v-for="itemlist in item.list" :key="itemlist._path" :to="itemlist._path" :class="$style['_categs_link']">
           <span :class="$style['_categs_tags']" :style="{ background: t() }">{{ itemlist.summary.icon }} {{ itemlist.summary.tags }}</span> {{ itemlist.summary.desc }}
@@ -64,5 +64,13 @@ function t() {
   padding: 6px 10px;
   border-radius: 4px;
   margin-right: 4px;
+}
+@media screen and (max-width: 768px) {
+  ._categs_ctx{
+    width: 90%;
+  }
+  ._categs_timeline{
+    padding-left: 0;
+  }
 }
 </style>

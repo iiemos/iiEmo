@@ -49,7 +49,7 @@ const { logo, shortName, footer } = publics
   gap: 2%;
 }
 .iiemo_logo {
-  font-weight: 700;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
   img {

@@ -3,12 +3,12 @@ export default {
   shortName: 'iiEmo',
   header: {
     nav: [
-      { name: '首页', link: '/' },
-      { name: '分类', link: '/categories.html' },
-      { name: '标签', link: '/tags.html' },
-      { name: '友链', link: '/links.html' },
-      { name: '关于', link: '/about.html' },
-      { name: 'Emoji', link: '/emoji.html' },
+      { name: '首页', icon: '😃' , link: '/' },
+      { name: '分类', icon: '😄', link: '/categories.html' },
+      { name: '标签', icon: '😁', link: '/tags.html' },
+      { name: '友链', icon: '😆', link: '/links.html' },
+      { name: '关于', icon: '😂', link: '/about.html' },
+      { name: 'Emoji', icon: '😳', link: '/emoji.html' },
     ],
     isShowAnimation: true,
     themes: [
