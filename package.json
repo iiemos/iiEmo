@@ -1,0 +1,23 @@
+{
+  "name": "iiemo",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "devDependencies": {
+    "@nuxt/content": "npm:@nuxt/content-edge@latest",
+    "nuxt": "npm:nuxt3@latest"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.1",
+    "@vueuse/nuxt": "^9.1.0",
+    "element-plus": "^2.2.14",
+    "nuxt-windicss": "^2.5.0",
+    "pinia": "^2.0.19",
+    "rollup-plugin-visualizer": "^5.7.1",
+    "sass": "^1.54.5"
+  }
+}
