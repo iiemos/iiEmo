@@ -1,6 +1,6 @@
 import { defineNuxtConfig } from 'nuxt'
 import { visualizer } from "rollup-plugin-visualizer"; // 打包体积分析
-import AutoImport from 'unplugin-auto-import/vite'
+// import AutoImport from 'unplugin-auto-import/vite'
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 const lifecycle = process.env.npm_lifecycle_event;
@@ -39,9 +39,9 @@ export default defineNuxtConfig({
       }
     },
     plugins: [
-      AutoImport({
-        resolvers: [ElementPlusResolver()]
-      }),
+      // AutoImport({
+      //   resolvers: [ElementPlusResolver()]
+      // }),
       Components({
         dts: true,
         resolvers: [ElementPlusResolver()]
