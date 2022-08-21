@@ -29,7 +29,7 @@ export default {
         textColor: '#3B82F6',
         mdColor: '#0353b7',
         mdBgColor: '#98bdec',
-        mdBorderColor: '#b0f895',
+        mdBorderColor: '#97c6ff',
         bannerColor: '#BFDBFE',
       },
       {

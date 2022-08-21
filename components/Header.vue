@@ -2,7 +2,6 @@
 import publics from '@/data/publics'
 import { ElSwitch, ElDrawer } from 'element-plus/dist/index.full.js'
 import { Check, Close } from '@element-plus/icons-vue'
-import { useStorage } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 const route = useRoute()
 
@@ -14,18 +13,17 @@ const filterColor = (o)=>{
 }
 function changeSwitch() {}
 const checkTheme = (i?: any) => {
-  const myTheme = useStorage('myScheme', i)
-  if(myTheme.value || i) {
-    if(i) myTheme.value = i
-    setTheme(myTheme.value)
-  }
-  else if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+  const myTheme = localStorage.getItem('myScheme')
+  if(myTheme || i ) {
+    if(i) localStorage.setItem('myScheme', JSON.stringify(i))
+    setTheme(JSON.parse(localStorage.getItem('myScheme')))
+  }else if(window.matchMedia('(prefers-color-scheme: dark)').matches){
     setTheme(filterColor('dark')[0])
   }
 }
 const setTheme  = ((p:any)=>{
     if(!p) return
-    themeColor.value = typeof(p)=='string' ? JSON.parse(p) : p
+    themeColor.value = p
     document.documentElement.classList.add(themeColor.value.code)
     document
       .getElementsByTagName('body')[0]

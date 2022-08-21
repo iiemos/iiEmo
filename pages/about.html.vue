@@ -185,12 +185,12 @@ onUnmounted(()=>{
 }
 ._my_info {
   width: 70%;
-  background: #e6ebf1;
+  background: $themeMarkdownBgColor;
   box-shadow: 0 5px 10px 0 rgb(144 164 174 / 40%);
   border-radius: 7px;
 }
 ._info_item {
-  background: #f6f8fa;
+  background: $themeBannerColor;
   border-radius: 12px;
   backdrop-filter: blur(8px) saturate(180%);
   position: relative;
@@ -202,7 +202,7 @@ onUnmounted(()=>{
   font-weight: normal;
   padding: 8px 14px;
   font-weight: bold;
-  background: #cdd6df;
+  background: $themeMarkdownBorderColor;
 }
 ._info_item_ctx {
   padding: 8px 14px 8px 20px;
