@@ -1,11 +1,19 @@
 import { defineNuxtConfig } from 'nuxt'
 import { visualizer } from "rollup-plugin-visualizer"; // 打包体积分析
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from "unplugin-vue-components/vite";
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+const lifecycle = process.env.npm_lifecycle_event;
 export default defineNuxtConfig({
   pages: true,
   css: ['@/assets/scss/index.scss'],
   modules: [
     '@nuxt/content'
   ],
+  // build
+  build: {
+    transpile: lifecycle === "build" ? ["element-plus"] : [],
+  },
   buildModules: [
     'nuxt-windicss',
     '@vueuse/nuxt',
@@ -31,6 +39,13 @@ export default defineNuxtConfig({
       }
     },
     plugins: [
+      AutoImport({
+        resolvers: [ElementPlusResolver()]
+      }),
+      Components({
+        dts: true,
+        resolvers: [ElementPlusResolver()]
+      }),
       visualizer,
     ]
   },
