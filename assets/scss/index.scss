@@ -133,7 +133,6 @@ body {
     }
 
     a,
-    code,
     h1,
     h2,
     h3,
@@ -194,7 +193,7 @@ body {
     img {
       max-width: 100%;
       user-select: none;
-      margin: 1em 0;
+      margin: 2em 0;
       transition: transform 0.2s ease 0s;
       background-color: $themeMarkdownBgColor;
       box-shadow: 0 0 10px $themeMarkdownBorderColor;
@@ -237,7 +236,8 @@ body {
       font-weight: 700;
       word-break: break-word;
       font-family: Operator Mono, Consolas, Monaco, Menlo, monospace;
-      background-color: $themeMarkdownBgColor;
+      background-color: $themeCodeBgColor;
+      // background-color: #8b8a8a;
     }
 
     pre {

@@ -21,6 +21,7 @@
   transition: opacity 0.4s ease-in;
 }
 .spotlight {
+  z-index: -1;
   background: linear-gradient(45deg, #00dc82 0%, #36e4da 50%, #0047e1 100%);
   filter: blur(20vh);
   height: 50vh;

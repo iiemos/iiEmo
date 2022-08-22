@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // import { ElPagination } from 'element-plus'
-
+import { randomColor } from '@/utlis/global'
 import { storeToRefs } from 'pinia'
 let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore()) 
 const { data } = await useAsyncData(() => queryContent('/').find())
@@ -14,9 +14,9 @@ data.value.forEach((i)=>{ typeList.forEach((e)=>{ if( e.id == i.summary.type ) e
 <template>
   <div class="">
     <div :class="$style['home_type']" class="container mx-auto mb-6">
-      <div v-for="(item) in typeList" :key="item.id" :class="$style['home_type_item']" class="py-4">
+      <nuxt-link v-for="(item) in typeList" :key="item.id" :class="$style['home_type_item']" to="/categories.html" class="py-4">
         {{ item.id }}
-      </div>
+      </nuxt-link>
     </div>
     <div
       :class="[$style['pen_card'], [isHorizontal ? $style['_h'] : '']]"
@@ -34,11 +34,12 @@ data.value.forEach((i)=>{ typeList.forEach((e)=>{ if( e.id == i.summary.type ) e
             <div :class="$style['_item_top_l']" class="">
               <span
                 :class="$style['_type']"
-                class="bg-violet-300 mr-3 px-2 py-1 text-sm rounded"
+                class="mr-3 px-2 py-1 text-sm rounded"
+                :style="{ background: randomColor() }"
               >
                 {{ cItem.summary.type }}
               </span>
-              <span :class="$style['_time']" class="text-sm text-purple-700">{{
+              <span :class="$style['_time']" class="text-sm">{{
                 cItem.summary.createtime
               }}</span>
             </div>
@@ -51,9 +52,9 @@ data.value.forEach((i)=>{ typeList.forEach((e)=>{ if( e.id == i.summary.type ) e
           </div>
         </div>
         <div :class="$style['_img_warp']" class="mt-2">
-          <img
-            src="https://static.facebstore.com/public/uploads/_/originals/lunar-pro-screen-01.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,p_60/quality,q_90"
-          />
+          
+          <img v-if="cItem.summary.pic" :src="cItem.summary.pic" />
+          <div v-else :style="{ background: randomColor() }" :class="$style['_img_nopic']">NOPIC</div>
         </div>
       </nuxt-link>
     </div>
@@ -165,7 +166,7 @@ data.value.forEach((i)=>{ typeList.forEach((e)=>{ if( e.id == i.summary.type ) e
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: unset;
   gap: 3%;
   &._h {
@@ -204,12 +205,18 @@ data.value.forEach((i)=>{ typeList.forEach((e)=>{ if( e.id == i.summary.type ) e
     box-shadow: 0 4px 8px rgb(84 81 81 / 15%);
     z-index: 1;
     ._img_warp {
+      ._img_nopic{
+        color: #fff;
+      }
     }
   }
 }
 ._text_warp {
   display: flex;
   flex-direction: column;
+  ._type{
+    color: #fff;
+  }
 }
 ._item_top {
   border-bottom: 1px solid hsla(210, 8%, 51%, 0.09) !important;
@@ -220,6 +227,22 @@ data.value.forEach((i)=>{ typeList.forEach((e)=>{ if( e.id == i.summary.type ) e
   justify-content: space-between;
 }
 ._img_warp {
+  border-radius: 6px;
+  overflow: hidden;
+  height: 100%;
+  ._img_nopic{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 1.7rem;
+    color: #ffffff69;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+  }
 }
 .pen_pagination {
   padding: 5rem 0;
@@ -227,7 +250,32 @@ data.value.forEach((i)=>{ typeList.forEach((e)=>{ if( e.id == i.summary.type ) e
   align-items: center;
   justify-content: center;
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 1536px) {
+  ._img_warp {
+    width: 434px;
+    height: 307px;
+  }
+}
+@media (max-width: 1536px) and (min-width: 1440px){
+  ._img_warp {
+    width: 404px;
+    height: 286px;
+  }
+}
+@media (max-width: 1440px) and (min-width: 976px){
+  ._img_warp {
+    width: 258px;
+    height: 183px;
+  }
+}
+@media (max-width: 976px) and (min-width: 768px){
+  ._img_warp {
+    width: 192px;
+    height: 137px;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 375px) {
   .home_type{
     padding: 0 20px;
   }

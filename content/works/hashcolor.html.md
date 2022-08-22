@@ -10,6 +10,7 @@ summary:
   desc: '#FFF 哈希格式色值透明度参照表'
   tags: 'HashColor'
   createtime: '2022-08-01'
+  pic: 'https://static.facebstore.com/public/uploads/_/originals/apple-silicon-m1-launch-applications-03.jpg'
 ---
 
 # #FFF 哈希格式色值透明度参照表

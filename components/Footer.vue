@@ -8,7 +8,7 @@ const { logo, shortName, footer } = publics
     <div :class="$style['iiemo_footer_warp']" class="container mx-auto">
       <div :class="$style['iiemo_foot_l']">
         <nuxt-link to="/" :class="$style['iiemo_logo']" class="">
-          <img :src="logo" alt="" />
+          <img :src="`../${logo}`" alt="iiEmo 一朵大呲花 🍀" />
           <span>{{ shortName }}</span>
         </nuxt-link>
         <nav :class="$style['iiemo_nav']" class="">
@@ -35,7 +35,7 @@ const { logo, shortName, footer } = publics
 <style lang="scss" module>
 .iiemo_footer {
   box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.05);
-  mix-blend-mode: hard-light;
+  // mix-blend-mode: hard-light;
 }
 .iiemo_footer_warp {
   display: flex;

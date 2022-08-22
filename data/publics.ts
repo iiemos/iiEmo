@@ -1,5 +1,5 @@
 export default {
-  logo: '/assets/img/logo.png',
+  logo: 'assets/img/logo.png',
   shortName: 'iiEmo',
   header: {
     nav: [
@@ -17,6 +17,7 @@ export default {
         code: 'light',
         bgColor: '#FFFFFF',
         textColor: '#000000',
+        codeColor: '#f8f8f8',
         mdColor: '#35cb00',
         mdBgColor: '#daf5d0',
         mdBorderColor: '#b0f895',
@@ -27,6 +28,7 @@ export default {
         code: 'blue',
         bgColor: '#BFDBFE',
         textColor: '#3B82F6',
+        codeColor: '#ffffff54',
         mdColor: '#0353b7',
         mdBgColor: '#98bdec',
         mdBorderColor: '#97c6ff',
@@ -37,6 +39,7 @@ export default {
         code: 'dark',
         bgColor: '#1D1D1D',
         textColor: '#FFFFFF',
+        codeColor: '#ffffff3b',
         mdColor: '#ffffff',
         mdBgColor: '#ffffff3b',
         mdBorderColor: '#a2a2a2',
@@ -55,7 +58,8 @@ export default {
       { name: '隐私', link: '/about.html' },
     ],
     copyright: {
-      beian: '沪ICP备19036122号',
+      // beian: '沪ICP备19036122号',
+      beian: '',
       beianLink: 'https://beian.miit.gov.cn/',
       desc: 'iiEmo.com © 2022. All rights reserved.',
     },

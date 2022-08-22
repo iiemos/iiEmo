@@ -4,7 +4,6 @@ import { ElSwitch, ElDrawer } from 'element-plus/dist/index.full.js'
 import { Check, Close } from '@element-plus/icons-vue'
 import { storeToRefs } from 'pinia'
 const route = useRoute()
-
 let  { themeColor, isAnimation } = storeToRefs(iiemoStore()) // use pinia is esay
 const { logo, shortName, header } = publics
 
@@ -31,6 +30,9 @@ const setTheme  = ((p:any)=>{
     document
       .getElementsByTagName('body')[0]
       .style.setProperty('--themeTextColor', themeColor.value.textColor)
+    document
+      .getElementsByTagName('body')[0]
+      .style.setProperty('--themeCodeBgColor', themeColor.value.codeColor)
     document
       .getElementsByTagName('body')[0]
       .style.setProperty('--themeMarkdownColor', themeColor.value.mdColor)
@@ -61,7 +63,7 @@ const changeMeun = ()=>{
     <div :class="$style['iiemo_head_warp']" class="container mx-auto">
       <div :class="$style['iiemo_head_l']">
         <nuxt-link to="/" :class="$style['iiemo_logo']" class="">
-          <img :src="logo" alt="" />
+          <img :src="`../${logo}`" alt="iiEmo 一朵大呲花 🍀" />
           <span>{{ shortName }}</span>
         </nuxt-link>
         <nav :class="$style['iiemo_nav']" class="">
@@ -83,7 +85,7 @@ const changeMeun = ()=>{
           class="text-xs px-2 mr-5 t_color"
           v-if="header.isShowAnimation"
         >
-          动画
+          <!-- 动画
           <el-switch
             v-model="isAnimation"
             class="ml-2"
@@ -91,7 +93,7 @@ const changeMeun = ()=>{
             :active-icon="Check"
             :inactive-icon="Close"
             @change="changeSwitch()"
-          />
+          /> -->
         </div>
         <div :class="$style['color_mode']" class="">
           <div
