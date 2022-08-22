@@ -2,9 +2,8 @@
 export default{
   title: 'iiEmo · 一朵大呲花',
   slogin: [
+    '只争朝夕，不负韶华',
     '孜孜不倦，认真且怂',
-    '我本将心向明月，奈何明月照沟渠',
-    '问君能有几多愁，恰似一江春水向东流'
   ],
   myCode: `
     const AboutUs = {

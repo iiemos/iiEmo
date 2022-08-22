@@ -31,7 +31,7 @@ useHead({
           >
             <div :class="$style['_item_top']" class="row-start-auto">
               <div :class="$style['_link_logo']" class="mb-2 mr-4">
-                <img :src="getAssetsFile(lItem.logo)" />
+                <img :src="lItem.logo" />
               </div>
               <div>
                 <div
@@ -79,7 +79,7 @@ useHead({
           >
             <div :class="$style['_item_top']" class="row-start-auto">
               <div :class="$style['_link_logo']" class="mb-2 mr-4">
-                <img :src="getAssetsFile(mItem.logo)" />
+                <img :src="mItem.logo" />
               </div>
               <div>
                 <div
