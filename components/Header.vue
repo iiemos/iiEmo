@@ -3,6 +3,7 @@ import publics from '@/data/publics'
 import { ElSwitch, ElDrawer } from 'element-plus/dist/index.full.js'
 import { Check, Close } from '@element-plus/icons-vue'
 import { storeToRefs } from 'pinia'
+import { getAssetsFile } from '@/utlis/global'
 const route = useRoute()
 let  { themeColor, isAnimation } = storeToRefs(iiemoStore()) // use pinia is esay
 const { logo, shortName, header } = publics
@@ -63,7 +64,7 @@ const changeMeun = ()=>{
     <div :class="$style['iiemo_head_warp']" class="container mx-auto">
       <div :class="$style['iiemo_head_l']">
         <nuxt-link to="/" :class="$style['iiemo_logo']" class="">
-          <img :src="`../${logo}`" alt="iiEmo 一朵大呲花 🍀" />
+          <img :src="getAssetsFile(logo)" alt="iiEmo 一朵大呲花 🍀" />
           <span>{{ shortName }}</span>
         </nuxt-link>
         <nav :class="$style['iiemo_nav']" class="">

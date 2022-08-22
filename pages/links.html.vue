@@ -1,5 +1,6 @@
 <script setup>
 import links from '@/data/links'
+import { getAssetsFile } from '@/utlis/global'
 const { linkSite, mirrorSite } = links
 useHead({
   title: '友情链接 - 一朵大呲花',
@@ -30,7 +31,7 @@ useHead({
           >
             <div :class="$style['_item_top']" class="row-start-auto">
               <div :class="$style['_link_logo']" class="mb-2 mr-4">
-                <img :src="`${lItem.logo}`" />
+                <img :src="getAssetsFile(lItem.logo)" />
               </div>
               <div>
                 <div
@@ -78,7 +79,7 @@ useHead({
           >
             <div :class="$style['_item_top']" class="row-start-auto">
               <div :class="$style['_link_logo']" class="mb-2 mr-4">
-                <img :src="`./${mItem.logo}`" />
+                <img :src="getAssetsFile(mItem.logo)" />
               </div>
               <div>
                 <div

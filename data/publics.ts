@@ -1,5 +1,5 @@
 export default {
-  logo: 'assets/img/logo.png',
+  logo: '/logo.png',
   shortName: 'iiEmo',
   header: {
     nav: [
