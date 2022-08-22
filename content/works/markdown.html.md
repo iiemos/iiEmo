@@ -10,7 +10,7 @@ summary:
   desc: 'Markdown 语法大全'
   tags: 'Markdown'
   createtime: '2022-08-01'
-  pic: '../../assets/img/pic/markdown_icon.jpg'
+  pic: '/img/pic/markdown_icon.jpg'
 ---
 
 # 欢迎使用 Cmd Markdown 编辑阅读器

@@ -20,7 +20,7 @@ export default{
     {
       name: '华为',
       desc: '构建万物互联的智能世界',
-      logo: '/mirror/huawei.png',
+      logo: '/img/mirror/huawei.png',
       lab: '镜像站',
       color: '#b275ff',
       addTime: '2022-08-03',
@@ -29,7 +29,7 @@ export default{
     {
       name: '阿里云',
       desc: '为了无法计算的价值',
-      logo: '/mirror/aliyun.png',
+      logo: '/img/mirror/aliyun.png',
       lab: '镜像站',
       color: '#b275ff',
       addTime: '2022-08-03',
@@ -38,7 +38,7 @@ export default{
     {
       name: '网易',
       desc: '网聚人的力量',
-      logo: '/mirror/netease.png',
+      logo: '/img/mirror/netease.png',
       lab: '镜像站',
       color: '#b275ff',
       addTime: '2022-08-03',
@@ -47,7 +47,7 @@ export default{
     {
       name: '清华大学',
       desc: '自强不息,厚德载物',
-      logo: '/mirror/qh.png',
+      logo: '/img/mirror/qh.png',
       lab: '镜像站',
       color: '#b275ff',
       addTime: '2022-08-03',
@@ -56,7 +56,7 @@ export default{
     {
       name: '浙江大学',
       desc: '兼总条贯,知至知终',
-      logo: '/mirror/zd.png',
+      logo: '/img/mirror/zd.png',
       lab: '镜像站',
       color: '#b275ff',
       addTime: '2022-08-03',
@@ -65,7 +65,7 @@ export default{
     {
       name: '中国科技大学',
       desc: '红专并进,理实交融',
-      logo: '/mirror/zkd.png',
+      logo: '/img/mirror/zkd.png',
       lab: '镜像站',
       color: '#b275ff',
       addTime: '2022-08-03',

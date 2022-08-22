@@ -45,13 +45,13 @@ session.defaultSession.getAllExtensions()
 ## 本地chrome插件安装
 - 如果你的本地chrome已经安装过`vue-devtools`了，并且不想再去[github](https://github.com/vuejs/vue-devtools){:target="_blank"}上下载进行打包折腾，那就用这个方法
   - `chrome://extensions/` 进入插件管理页面，勾选开发者模式，找到对应插件的 ​id​
-  ![chrome插件管理页面](../../assets/img/works/extensions.jpg)
+  ![chrome插件管理页面](/img/works/extensions.jpg)
 
   - 通过 ​`chrome://version/`​ 可以查看浏览器的信息，浏览器所有插件的路径都在。
-  ![chrome插件路径](../../assets/img/works/version.jpg)
+  ![chrome插件路径](/img/works/version.jpg)
   
   - 找到的vue-tools插件id 在插件路径里面的 Extensions 文件夹查找对应的id
-  ![chrome插件目录](../../assets/img/works/chromeTools.jpg)
+  ![chrome插件目录](/img/works/chromeTools.jpg)
 
   - 把里面所有文件都复制到项目中的新建文件夹`（你也可以不在项目中新建目录直接贴你本地的目录，协同开发的话添加到项目中比较好，不用每个人都修改配置文件）` 然后再 Electron入口文件里面进行配置
   ```javascript

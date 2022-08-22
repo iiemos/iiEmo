@@ -10,7 +10,7 @@ summary:
   desc: 'Nuxt3 - 博客搭建路程'
   tags: 'Nuxt3'
   createtime: '2022-08-01'
-  pic: '../../assets/img/pic/nuxt3_icon.jpg'
+  pic: '/img/pic/nuxt3_icon.jpg'
 ---
 
 # nuxt3学习笔记

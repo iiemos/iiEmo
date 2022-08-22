@@ -10,7 +10,7 @@ summary:
   desc: '#FFF 哈希格式色值透明度参照表'
   tags: 'HashColor'
   createtime: '2022-08-01'
-  pic: '../../assets/img/pic/hash_color.jpg'
+  pic: '/img/pic/hash_color.jpg'
 ---
 
 # #FFF 哈希格式色值透明度参照表
