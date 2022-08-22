@@ -39,9 +39,8 @@ data.value.forEach((i)=>{ typeList.forEach((e)=>{ if( e.id == i.summary.type ) e
               >
                 {{ cItem.summary.type }}
               </span>
-              <span :class="$style['_time']" class="text-sm">{{
-                cItem.summary.createtime
-              }}</span>
+              <span :class="$style['_time']" class="text-sm">
+              {{ cItem.summary.createtime }}</span>
             </div>
             <div :class="$style['_title']" class="text-2xl mt-2">
               {{ cItem.summary.title }}
@@ -54,7 +53,7 @@ data.value.forEach((i)=>{ typeList.forEach((e)=>{ if( e.id == i.summary.type ) e
         <div :class="$style['_img_warp']" class="mt-2">
           
           <img v-if="cItem.summary.pic" :src="cItem.summary.pic" />
-          <div v-else :style="{ background: randomColor() }" :class="$style['_img_nopic']">NOPIC</div>
+          <div v-else :style="{ background: randomColor() }" :class="$style['_img_nopic']">{{ cItem.summary.tags }}</div>
         </div>
       </nuxt-link>
     </div>

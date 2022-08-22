@@ -10,6 +10,7 @@ summary:
   desc: 'Markdown 语法大全'
   tags: 'Markdown'
   createtime: '2022-08-01'
+  pic: '../../assets/img/pic/markdown_icon.jpg'
 ---
 
 # 欢迎使用 Cmd Markdown 编辑阅读器
@@ -24,7 +25,7 @@ summary:
 > * 整理知识，学习笔记
 > * 发布日记，杂文，所见所想
 > * 撰写发布技术文稿（代码支持）
-> * 撰写发布学术论文（LaTeX 公式支持）
+> * 撰写发布学术论文（LaTeX 公式支持） 
 
 
 ------

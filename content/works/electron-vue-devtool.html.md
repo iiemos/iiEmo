@@ -10,6 +10,7 @@ summary:
   desc: 'Electron [vue-devtools] 安装避坑指南'
   tags: 'Electron + vue-devtools'
   createtime: '2022-08-01'
+  pic: ''
 ---
 
 # electron [vue-devtools] 安装
