@@ -2,7 +2,7 @@
 import { ElSwitch } from 'element-plus'
 import { Menu, List } from '@element-plus/icons-vue'
 import { storeToRefs } from 'pinia'
-let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore()) 
+let  { isHorizontal } = storeToRefs(iiemoStore()) 
 </script>
 <template>
   <div

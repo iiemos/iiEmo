@@ -4,7 +4,7 @@ import { ElSwitch, ElDrawer } from 'element-plus/dist/index.full.js'
 import { Check, Close } from '@element-plus/icons-vue'
 import { storeToRefs } from 'pinia'
 const route = useRoute()
-let  { themeColor, isAnimation } = storeToRefs(iiemoStore()) // use pinia is esay
+let  { themeColor } = storeToRefs(iiemoStore()) // use pinia is esay
 const { logo, shortName, header } = publics
 
 const filterColor = (o)=>{

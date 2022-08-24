@@ -1,8 +1,8 @@
 <script setup lang="ts">
 // import { ElPagination } from 'element-plus'
 import { randomColor } from '@/utlis/global'
-// import { storeToRefs } from 'pinia'
-// let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore()) 
+import { storeToRefs } from 'pinia'
+let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore()) 
 // const { data } = await useAsyncData(() => queryContent('/').find())
 // const types = data.value.map((i)=> i.summary.type ) // 获取type
 // const newTypes = Array.from(new Set(types)) // 去重
