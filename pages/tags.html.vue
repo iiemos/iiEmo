@@ -13,17 +13,17 @@ useHead({
     <div :class="$style['_tags_ctx']" class="mx-auto shadow-lg">
       <h1 class="text-xl fw-600 mb-2">标签</h1>
       <div :class="$style['_tags_warp']" class="gap-1">
-      <ContentList path="/" v-slot="{ list }">
-        <a
-          :class="$style['_tags_item']"
-          :style="{ color: randomColor() }"
-          class="px-3 py-1 rounded-lg"
-          v-for="(item, index) in list"
-          :key="index"
-          :href="item._path">
-          {{ item.summary.icon }} {{ item.summary.tags }}
-        </a>
-      </ContentList>
+        <ContentList path="/" v-slot="{ list }">
+          <a
+            :class="$style['_tags_item']"
+            :style="{ color: randomColor() }"
+            class="px-3 py-1 rounded-lg"
+            v-for="(item, index) in list"
+            :key="index"
+            :href="item._path">
+            {{ item.summary.icon }} {{ item.summary.tags }}
+          </a>
+        </ContentList>
       </div>
     </div>
   </NuxtLayout>

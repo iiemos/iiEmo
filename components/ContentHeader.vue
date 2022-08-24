@@ -10,7 +10,7 @@ let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore())
     class="container mx-auto mb-6 px-6 mt-10"
   >
     <h5 class="text-xl fw-600">
-      全部文章 <span class="text-sm ml-1">(66)</span>
+      全部文章 <span class="text-sm ml-1">(4)</span>
     </h5>
     <div :class="$style['content_switch']">
       <el-switch
