@@ -15,9 +15,11 @@ summary:
 
 # electron [vue-devtools] 安装
 
-- 首先需要安装vue-devtools 有两种安装方式 
+- 首先需要安装vue-devtools 有三种安装方式 
+  - `electron-devtools-installer`
   - `本地chrome插件安装包`
   - `github下载自己打包安装`
+
 
 ``` javascript
 // electron 13.0版本之后 addDevToolsExtension已经弃用
@@ -41,6 +43,28 @@ BrowserWindow.getDevToolsExtensions()
 session.defaultSession.getAllExtensions()
 ```
 > 所以之前各种百度出来的方法都不能用了，专门出一个避坑指南！！
+
+## electron-devtools-installer
+- 安装 `electron-devtools-installer`
+```javascript
+yarn add electron-devtools-installer
+```
+
+- 导出模块
+```javascript
+import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer';
+```
+
+- 在 `ready` 事件中注册
+```javascript
+app.on('ready', () => {
+  // ... 其他配置项
+  installExtension(VUEJS_DEVTOOLS)
+})
+```
+
+
+
 
 ## 本地chrome插件安装
 - 如果你的本地chrome已经安装过`vue-devtools`了，并且不想再去[github](https://github.com/vuejs/vue-devtools){:target="_blank"}上下载进行打包折腾，那就用这个方法

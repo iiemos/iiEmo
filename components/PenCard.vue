@@ -3,59 +3,67 @@
 import { randomColor } from '@/utlis/global'
 import { storeToRefs } from 'pinia'
 let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore()) 
-const { data } = await useAsyncData(() => queryContent('/').find())
-const types = data.value.map((i)=> i.summary.type ) // 获取type
-const newTypes = Array.from(new Set(types)) // 去重
-let typeList = newTypes.map((s)=>{ return { id: s, list: [] } } )
-data.value.forEach((i)=>{ typeList.forEach((e)=>{ if( e.id == i.summary.type ) e.list.push(i) }) })
+// const { data } = await useAsyncData(() => queryContent('/').find())
+// const types = data.value.map((i)=> i.summary.type ) // 获取type
+// const newTypes = Array.from(new Set(types)) // 去重
+// let typeList = newTypes.map((s)=>{ return { id: s, list: [] } } )
+// data.value.forEach((i)=>{ typeList.forEach((e)=>{ if( e.id == i.summary.type ) e.list.push(i) }) })
 
 </script>
 
 <template>
   <div class="">
     <div :class="$style['home_type']" class="container mx-auto mb-6">
-      <nuxt-link v-for="(item) in typeList" :key="item.id" :class="$style['home_type_item']" to="/categories.html" class="py-4">
+      <!-- <nuxt-link v-for="(item) in typeList" :key="item.id" :class="$style['home_type_item']" to="/categories.html" class="py-4">
         {{ item.id }}
-      </nuxt-link>
+      </nuxt-link> -->
+      <!-- <ContentNavigation v-slot="{ navigation }">
+      {{ navigation }}
+        <div v-for="link of navigation" :key="link._path">
+          <NuxtLink :to="link._path">{{ link.title }}</NuxtLink>
+        </div>
+      </ContentNavigation> -->
     </div>
     <div
       :class="[$style['pen_card'], [isHorizontal ? $style['_h'] : '']]"
       class="container mx-auto mb-6 px-6"
     >
-      <nuxt-link
-        v-for="cItem in data"
-        :key="cItem._id"
-        :to="cItem._path"
-        :class="[$style['pen_card_item'], isAnimation ? 'listLeftIn' : '']"
-        class="py-4 shadow-md p-4 rounded"
-      >
-        <div :class="$style['_text_warp']">
-          <div :class="$style['_item_top']" class="pb-3">
-            <div :class="$style['_item_top_l']" class="">
-              <span
-                :class="$style['_type']"
-                class="mr-3 px-2 py-1 text-sm rounded"
-                :style="{ background: randomColor() }"
-              >
-                {{ cItem.summary.type }}
-              </span>
-              <span :class="$style['_time']" class="text-sm">
-              {{ cItem.summary.createtime }}</span>
+      <ContentList path="/" v-slot="{ list }">
+        <nuxt-link
+          v-for="cItem in list"
+          :key="cItem._id"
+          :to="cItem._path"
+          :class="[$style['pen_card_item'], isAnimation ? 'listLeftIn' : '']"
+          class="py-4 shadow-md p-4 rounded"
+        >
+          <div :class="$style['_text_warp']">
+            <div :class="$style['_item_top']" class="pb-3">
+              <div :class="$style['_item_top_l']" class="">
+                <span
+                  :class="$style['_type']"
+                  class="mr-3 px-2 py-1 text-sm rounded"
+                  :style="{ background: randomColor() }"
+                >
+                  {{ cItem.summary.type }}
+                </span>
+                <span :class="$style['_time']" class="text-sm">
+                {{ cItem.summary.createtime }}</span>
+              </div>
+              <div :class="$style['_title']" class="text-2xl mt-2">
+                {{ cItem.summary.title }}
+              </div>
             </div>
-            <div :class="$style['_title']" class="text-2xl mt-2">
-              {{ cItem.summary.title }}
+            <div :class="$style['_desc']" class="text-base mt-2">
+              {{ cItem.summary.desc }}
             </div>
           </div>
-          <div :class="$style['_desc']" class="text-base mt-2">
-            {{ cItem.summary.desc }}
+          <div :class="$style['_img_warp']" class="mt-2">
+            
+            <img v-if="cItem.summary.pic" :src="cItem.summary.pic" />
+            <div v-else :style="{ background: randomColor() }" :class="$style['_img_nopic']">{{ cItem.summary.tags }}</div>
           </div>
-        </div>
-        <div :class="$style['_img_warp']" class="mt-2">
-          
-          <img v-if="cItem.summary.pic" :src="cItem.summary.pic" />
-          <div v-else :style="{ background: randomColor() }" :class="$style['_img_nopic']">{{ cItem.summary.tags }}</div>
-        </div>
-      </nuxt-link>
+        </nuxt-link>
+      </ContentList>
     </div>
     <div :class="$style['pen_pagination']" class="">
       <!-- <el-pagination

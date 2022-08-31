@@ -12,6 +12,9 @@ export default defineNuxtConfig({
   ],
   // build
   build: {
+    // analyze: { 
+    //   analyzerMode: 'static'
+    // },
     transpile: lifecycle === "build" ? ["element-plus"] : [],
   },
   buildModules: [
