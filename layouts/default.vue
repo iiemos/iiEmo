@@ -100,7 +100,7 @@ const setConsloe = () =>{
 }
 
 onMounted(()=>{
-  if(!IP.value && (window as any).returnCitySN){
+  if((window as any).returnCitySN){
     IP.value = JSON.stringify((window as any).returnCitySN) 
   }
 // Window拓展属性
