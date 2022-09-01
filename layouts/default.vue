@@ -4,14 +4,9 @@ import { useStorage } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 let  { isConsole } = storeToRefs(iiemoStore())
 const IP = useStorage('IP', '')
-if(!IP.value){
-  const userData = await $fetch('/api/getIP')
-  IP.value = userData  
-}
-
 const setConsloe = () =>{
   console.log('\n%c一朵大呲花 - 林深时见鹿 🍀\n', 'font-weight: 600;')
-  if(IP.value) console.log("🌰 Hi，来自 %c" + JSON.parse(IP.value).cname + " %c的朋友！", "color: #50a1ff; font-family: monoscope; font-weight: bold", "")
+  if(IP.value) console.log("🌰 Hi，来自 %c" + (IP.value ? JSON.parse(IP.value).cname : '五湖四海') + " %c的朋友！", "color: #50a1ff; font-family: monoscope; font-weight: bold", "")
   console.log('\n%c🍄 网站介绍：\n', 'font-weight: 600;')
   console.log('\n🥕 纯静态： Nuxt3 + Vite + @nuxt/content + windi + 几个Element-Plus 组件 + 手撸\n')
   console.log('\n🥕 UI： 乱七八糟随便整的\n')
@@ -22,7 +17,7 @@ const setConsloe = () =>{
   console.log('\n%c'+ '欢迎添加友链哦~~~~~~~~~~' +'%c\n', "color: #50a1ff; font-family: monoscope; font-weight: bold", "")
 
   // 消息弹框
-  let msgTlt = IP.value ? `来自<span style="color:#7c3aed;">${JSON.parse(IP.value).cname}</span>的` : ''
+  let msgTlt = IP.value ? `来自<span style="color:#7c3aed;">${IP.value ? JSON.parse(IP.value).cname : ''}</span>的` : ''
   let msgHTML = `
     <div class="nottion_warp">
       <div class="nottion_tlt">🥕 Hi, ${msgTlt}朋友</div>
@@ -105,6 +100,10 @@ const setConsloe = () =>{
 }
 
 onMounted(()=>{
+  if(!IP.value && (window as any).returnCitySN){
+    IP.value = JSON.stringify((window as any).returnCitySN) 
+  }
+// Window拓展属性
   let timer = setTimeout(()=>{
     isConsole.value = true
     clearTimeout(timer)

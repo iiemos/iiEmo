@@ -5,6 +5,13 @@ import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 const lifecycle = process.env.npm_lifecycle_event;
 export default defineNuxtConfig({
+  app: {
+    head: {
+      script: [
+        { src: 'https://pv.sohu.com/cityjson?ie=utf-8', charset: 'utf-8' }
+      ],
+    },
+  },
   pages: true,
   css: ['@/assets/scss/index.scss'],
   modules: [
