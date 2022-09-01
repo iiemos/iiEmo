@@ -4,7 +4,7 @@ const { logo, shortName, footer } = publics
 </script>
 
 <template>
-  <div :class="$style['iiemo_footer']" class="py-3">
+  <footer :class="$style['iiemo_footer']" class="py-3">
     <div :class="$style['iiemo_footer_warp']" class="container mx-auto">
       <div :class="$style['iiemo_foot_l']">
         <nuxt-link to="/" :class="$style['iiemo_logo']" class="">
@@ -29,7 +29,7 @@ const { logo, shortName, footer } = publics
         {{ footer.copyright.desc }}
       </div>
     </div>
-  </div>
+  </footer>
 </template>
 
 <style lang="scss" module>

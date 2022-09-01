@@ -183,6 +183,9 @@ let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore())
       align-items: center;
       flex-direction: row-reverse;
     }
+    ._img_nopic{
+      font-size: 1.2rem;
+    }
     ._text_warp {
       margin-left: 30px;
     }
@@ -282,7 +285,7 @@ let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore())
   }
 }
 
-@media (max-width: 768px) and (min-width: 375px) {
+@media (max-width: 768px) and (min-width: 100px) {
   .home_type{
     padding: 0 20px;
   }
@@ -301,6 +304,9 @@ let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore())
       height: 160px;
       border-radius: 10px;
       flex-shrink: 0;
+      ._img_nopic{
+        font-size: 1.3rem;
+      }
       img {
         width: 240px;
         height: 160px;
