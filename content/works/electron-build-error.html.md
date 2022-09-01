@@ -1,3 +1,17 @@
+---
+title: 'Electron Module format cjs does not support top-level await. Use the "es" or "system" output formats rather'
+keywords: '一朵大呲花,IT博客,技术博客,区块链博客'
+description: 'Electron Module format cjs does not support top-level await. Use the "es" or "system" output formats rather'
+
+summary:
+  title: 'Electron import.meta.glob异步引入模块报错'
+  type: '学习笔记'
+  icon: '🥝'
+  desc: 'Electron Module format cjs does not support top-level await. Use the "es" or "system" output formats rather'
+  tags: 'Vite import'
+  createtime: '2022-09-01'
+  pic: ''
+---
 # Module format cjs does not support top-level await. Use the "es" or "system" output formats rather.
  - 今天在`electron + vite`项目开发完成，打测试包的时候出现这个错误
   - 原因： vite打包模式不支持顶级模块进行await（异步），建议使用es或者system输出格式（同步）
