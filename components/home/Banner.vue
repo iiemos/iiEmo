@@ -1,21 +1,26 @@
 <script setup lang="ts">
 import publics from '@/data/publics'
 const { banner } = publics
+
+nextTick(() => {
+  // useScriptTag('/assets/js/canvas.js', (el: HTMLScriptElement) => {})
+})
 </script>
 <template>
-  <div :class="$style['home_banner']" class="mb-6">
-    <canvas :class="$style['banner_canvas']" id="banner_canvas"></canvas>
-    <div :class="$style['home_banner_txt']">
+  <div class="home_banner mb-6">
+    <canvas class="banner_canvas" id="banner_canvas"></canvas>
+    <div class="home_banner_txt">
       <h1 class="text-5xl">{{ banner.name }}</h1>
       <p class="text-lg mt-4">{{ banner.desc }}</p>
     </div>
   </div>
 </template>
 
-<style lang="scss" module>
+<style lang="scss" scoped>
 .home_banner {
   width: 100%;
   height: 400px;
+  // height: calc(100vh - 100px);
   position: relative;
   display: flex;
   align-items: center;
@@ -36,5 +41,14 @@ const { banner } = publics
   position: relative;
   z-index: 2;
   text-align: center;
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.4;
+  }
 }
 </style>

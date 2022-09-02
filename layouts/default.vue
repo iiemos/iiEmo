@@ -2,19 +2,19 @@
 import { ElNotification } from 'element-plus/dist/index.full.js'
 import { useStorage } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
-let  { isConsole } = storeToRefs(iiemoStore())
+let { isConsole } = storeToRefs(iiemoStore())
 const IP = useStorage('IP', '')
-const setConsloe = () =>{
+const setConsloe = () => {
   console.log('\n%c一朵大呲花 - 林深时见鹿 🍀\n', 'font-weight: 600;')
-  if(IP.value) console.log("🌰 Hi，来自 %c" + (IP.value ? JSON.parse(IP.value).cname : '五湖四海') + " %c的朋友！", "color: #50a1ff; font-family: monoscope; font-weight: bold", "")
+  if (IP.value) console.log('🌰 Hi，来自 %c' + (IP.value ? JSON.parse(IP.value).cname : '五湖四海') + ' %c的朋友！', 'color: #50a1ff; font-family: monoscope; font-weight: bold', '')
   console.log('\n%c🍄 网站介绍：\n', 'font-weight: 600;')
   console.log('\n🥕 纯静态： Nuxt3 + Vite + @nuxt/content + windi + 几个Element-Plus 组件 + 手撸\n')
   console.log('\n🥕 UI： 乱七八糟随便整的\n')
   console.log('\n🥕 初衷： 改善之前的wordPress笨重博客\n')
   console.log('\n🥕 建立时间： 2022-08-01（建军节）有幸服过两年兵役\n')
   console.log('\n%c想拥有自己博客吗？\n', 'font-weight: 600;')
-  console.log('\n本博客github完全开源，完全以配置文件的形式进行搭建，%c'+ '开箱即用' +'%c！\n', "color: #50a1ff; font-family: monoscope; font-weight: bold", "")
-  console.log('\n%c'+ '欢迎添加友链哦~~~~~~~~~~' +'%c\n', "color: #50a1ff; font-family: monoscope; font-weight: bold", "")
+  console.log('\n本博客github完全开源，完全以配置文件的形式进行搭建，%c' + '开箱即用' + '%c！\n', 'color: #50a1ff; font-family: monoscope; font-weight: bold', '')
+  console.log('\n%c' + '欢迎添加友链哦~~~~~~~~~~' + '%c\n', 'color: #50a1ff; font-family: monoscope; font-weight: bold', '')
 
   // 消息弹框
   let msgTlt = IP.value ? `来自<span style="color:#7c3aed;">${IP.value ? JSON.parse(IP.value).cname : ''}</span>的` : ''
@@ -89,209 +89,207 @@ const setConsloe = () =>{
     </div>
   `
   ElNotification({
-      duration: 0,
-      title: ``,
-      appendTo: 'footer',
-      dangerouslyUseHTMLString: true,
-      message: msgHTML,
-      position: 'bottom-right',
-    })
-    ProgressClock('#clock')
+    duration: 0,
+    title: ``,
+    appendTo: 'footer',
+    dangerouslyUseHTMLString: true,
+    message: msgHTML,
+    position: 'bottom-right',
+  })
+  ProgressClock('#clock')
 }
 
-onMounted(()=>{
-  if((window as any).returnCitySN){
-    IP.value = JSON.stringify((window as any).returnCitySN) 
+onMounted(() => {
+  if ((window as any).returnCitySN) {
+    IP.value = JSON.stringify((window as any).returnCitySN)
   }
-// Window拓展属性
-  let timer = setTimeout(()=>{
+  // Window拓展属性
+  let timer = setTimeout(() => {
     isConsole.value = true
     clearTimeout(timer)
-  },1000)
-  if(!isConsole.value){
+  }, 1000)
+  if (!isConsole.value) {
     setConsloe()
   }
 })
-const ProgressClock = (qs:any)=>{
-    const el = document.querySelector(qs)
-    const time = ref<any>(0)
-    const updateTimeout:any = ref<any>(null)
-    const ringTimeouts = ref<any>([])
-    const getDayOfWeek = (day:any)=>{
-      switch (day) {
-        case 1:
-          return "星期一"; // "Monday"
-        case 2:
-          return "星期二"; // Tuesday
-        case 3:
-          return "星期三"; // Wednesday
-        case 4:
-          return "星期四";// Thursday
-        case 5:
-          return "星期五"; // Friday
-        case 6:
-          return "星期六"; // Saturday
-        default:
-          return "星期日"; // Sunday
-      }
+const ProgressClock = (qs: any) => {
+  const el = document.querySelector(qs)
+  const time = ref<any>(0)
+  const updateTimeout: any = ref<any>(null)
+  const ringTimeouts = ref<any>([])
+  const getDayOfWeek = (day: any) => {
+    switch (day) {
+      case 1:
+        return '星期一' // "Monday"
+      case 2:
+        return '星期二' // Tuesday
+      case 3:
+        return '星期三' // Wednesday
+      case 4:
+        return '星期四' // Thursday
+      case 5:
+        return '星期五' // Friday
+      case 6:
+        return '星期六' // Saturday
+      default:
+        return '星期日' // Sunday
     }
-    const getMonthInfo = (mo:any, yr:any) => {
-      switch (mo) {
-        case 1:
-          return { name: "February", days: yr % 4 === 0 ? 29 : 28 };
-        case 2:
-          return { name: "March", days: 31 };
-        case 3:
-          return { name: "April", days: 30 };
-        case 4:
-          return { name: "May", days: 31 };
-        case 5:
-          return { name: "June", days: 30 };
-        case 6:
-          return { name: "July", days: 31 };
-        case 7:
-          return { name: "August", days: 31 };
-        case 8:
-          return { name: "September", days: 30 };
-        case 9:
-          return { name: "October", days: 31 };
-        case 10:
-          return { name: "November", days: 30 };
-        case 11:
-          return { name: "December", days: 31 };
-        default:
-          return { name: "January", days: 31 };
-      }
+  }
+  const getMonthInfo = (mo: any, yr: any) => {
+    switch (mo) {
+      case 1:
+        return { name: 'February', days: yr % 4 === 0 ? 29 : 28 }
+      case 2:
+        return { name: 'March', days: 31 }
+      case 3:
+        return { name: 'April', days: 30 }
+      case 4:
+        return { name: 'May', days: 31 }
+      case 5:
+        return { name: 'June', days: 30 }
+      case 6:
+        return { name: 'July', days: 31 }
+      case 7:
+        return { name: 'August', days: 31 }
+      case 8:
+        return { name: 'September', days: 30 }
+      case 9:
+        return { name: 'October', days: 31 }
+      case 10:
+        return { name: 'November', days: 30 }
+      case 11:
+        return { name: 'December', days: 31 }
+      default:
+        return { name: 'January', days: 31 }
     }
-    const update = () =>{
-      time.value = new Date()
-      if(el){
-        // date and time
-        const dayOfWeek = time.value.getDay()
-        const year = time.value.getFullYear()
-        const month = time.value.getMonth()
-        const day = time.value.getDate()
-        const hr = time.value.getHours()
-        const min = time.value.getMinutes()
-        const sec = time.value.getSeconds()
-        const dayOfWeekName = getDayOfWeek(dayOfWeek)
-        const monthInfo = getMonthInfo(month, year)
-        const m_progress = sec / 60
-        const h_progress = (min + m_progress) / 60
-        const d_progress = (hr + h_progress) / 24
-        const mo_progress = ((day - 1) + d_progress) / monthInfo.days
-                  const units = [
-          {
-            label: "w",
-            value: dayOfWeekName
-          },
-          {
-            label: "mo",
-            value: monthInfo.name,
-            progress: mo_progress
-          },
-          {
-            label: "d",
-            value: day,
-            progress: d_progress
-          },
-          {
-            label: "h",
-            value: hr > 12 ? hr - 12 : hr,
-            progress: h_progress
-          },
-          {
-            label: "m",
-            value: min < 10 ? "0" + min : min,
-            progress: m_progress
-          },
-          {
-            label: "s",
-            value: sec < 10 ? "0" + sec : sec
-          },
-          {
-            label: "ap",
-            value: hr > 12 ? "PM" : "AM"
-          }
-        ]
+  }
+  const update = () => {
+    time.value = new Date()
+    if (el) {
+      // date and time
+      const dayOfWeek = time.value.getDay()
+      const year = time.value.getFullYear()
+      const month = time.value.getMonth()
+      const day = time.value.getDate()
+      const hr = time.value.getHours()
+      const min = time.value.getMinutes()
+      const sec = time.value.getSeconds()
+      const dayOfWeekName = getDayOfWeek(dayOfWeek)
+      const monthInfo = getMonthInfo(month, year)
+      const m_progress = sec / 60
+      const h_progress = (min + m_progress) / 60
+      const d_progress = (hr + h_progress) / 24
+      const mo_progress = (day - 1 + d_progress) / monthInfo.days
+      const units = [
+        {
+          label: 'w',
+          value: dayOfWeekName,
+        },
+        {
+          label: 'mo',
+          value: monthInfo.name,
+          progress: mo_progress,
+        },
+        {
+          label: 'd',
+          value: day,
+          progress: d_progress,
+        },
+        {
+          label: 'h',
+          value: hr > 12 ? hr - 12 : hr,
+          progress: h_progress,
+        },
+        {
+          label: 'm',
+          value: min < 10 ? '0' + min : min,
+          progress: m_progress,
+        },
+        {
+          label: 's',
+          value: sec < 10 ? '0' + sec : sec,
+        },
+        {
+          label: 'ap',
+          value: hr > 12 ? 'PM' : 'AM',
+        },
+      ]
 
-        // flush out the timeouts
-        ringTimeouts.value.forEach((t:any) => {
-          clearTimeout(t)
-        })
-        ringTimeouts.value = []
+      // flush out the timeouts
+      ringTimeouts.value.forEach((t: any) => {
+        clearTimeout(t)
+      })
+      ringTimeouts.value = []
 
-        // update the display
-        units.forEach(u => {
-          // rings
-          const ring = el.querySelector(`[data-ring="${u.label}"]`);
+      // update the display
+      units.forEach((u) => {
+        // rings
+        const ring = el.querySelector(`[data-ring="${u.label}"]`)
 
-          if (ring) {
-            const strokeDashArray = ring.getAttribute("stroke-dasharray");
-            const fill360 = "progress-clock__ring-fill--360";
+        if (ring) {
+          const strokeDashArray = ring.getAttribute('stroke-dasharray')
+          const fill360 = 'progress-clock__ring-fill--360'
 
-            if (strokeDashArray) {
-              // calculate the stroke
-              const circumference = +strokeDashArray.split(" ")[0];
-              const strokeDashOffsetPct = 1 - u.progress;
+          if (strokeDashArray) {
+            // calculate the stroke
+            const circumference = +strokeDashArray.split(' ')[0]
+            const strokeDashOffsetPct = 1 - u.progress
 
-              ring.setAttribute(
-                "stroke-dashoffset",
-                strokeDashOffsetPct * circumference
-              );
+            ring.setAttribute('stroke-dashoffset', strokeDashOffsetPct * circumference)
 
-              // add the fade-out transition, then remove it
-              if (strokeDashOffsetPct === 1) {
-                ring.classList.add(fill360);
+            // add the fade-out transition, then remove it
+            if (strokeDashOffsetPct === 1) {
+              ring.classList.add(fill360)
 
-                ringTimeouts.value.push(
-                  setTimeout(() => {
-                    ring.classList.remove(fill360);
-                  }, 600)
-                );
-              }
+              ringTimeouts.value.push(
+                setTimeout(() => {
+                  ring.classList.remove(fill360)
+                }, 600)
+              )
             }
           }
+        }
 
-          // digits
-          const unit = el.querySelector(`[data-unit="${u.label}"]`);
+        // digits
+        const unit = el.querySelector(`[data-unit="${u.label}"]`)
 
-          if (unit)
-            unit.innerText = u.value;
-        })
-      }
+        if (unit) unit.innerText = u.value
+      })
     }
-    clearInterval(updateTimeout.value)
-    // updateTimeout.value = setTimeout(update.bind(this), 1e3)
-    updateTimeout.value = setInterval(()=>{
-      update()
-    },1000)
+  }
+  clearInterval(updateTimeout.value)
+  // updateTimeout.value = setTimeout(update.bind(this), 1e3)
+  updateTimeout.value = setInterval(() => {
     update()
-
+  }, 1000)
+  update()
 }
-
 </script>
 <template>
   <div class="_layouts">
+    <NuxtLoadingIndicator />
     <Header />
-      <section :class="$style['_layouts_slot']">
-        <slot />
-        <BackTop />
-      </section>
+    <section :class="$style['_layouts_slot']">
+      <slot />
+      <BackTop />
+    </section>
     <!-- <Spotlight /> -->
     <Footer />
   </div>
 </template>
 <style>
-.el-notification{
+.el-notification {
   padding: 14px;
 }
-.nottion_warp{
+.el-notification__group {
+  width: 90%;
+}
+.nottion_warp {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.nottion_tlt{
+.nottion_tlt {
   margin-bottom: 10px;
 }
 .progress-clock {
@@ -362,9 +360,7 @@ const ProgressClock = (qs:any)=>{
 }
 
 .progress-clock__ring-fill {
-  transition:
-    opacity 0s 0.3s linear,
-    stroke-dashoffset 0.3s ease-in-out;
+  transition: opacity 0s 0.3s linear, stroke-dashoffset 0.3s ease-in-out;
 }
 
 .progress-clock__ring-fill--360 {
@@ -381,39 +377,39 @@ const ProgressClock = (qs:any)=>{
   transition: opacity 0.2s linear;
 }
 
-[data-group="d"]:focus,
-[data-group="d"]:hover {
+[data-group='d']:focus,
+[data-group='d']:hover {
   color: hsl(333, 90%, 55%);
 }
 
-[data-group="h"]:focus,
-[data-group="h"]:hover {
+[data-group='h']:focus,
+[data-group='h']:hover {
   color: hsl(33, 90%, 55%);
 }
 
-[data-group="m"]:focus,
-[data-group="m"]:hover {
+[data-group='m']:focus,
+[data-group='m']:hover {
   color: hsl(213, 90%, 55%);
 }
 
-[data-group="s"]:focus,
-[data-group="s"]:hover {
+[data-group='s']:focus,
+[data-group='s']:hover {
   color: hsl(273, 90%, 55%);
 }
 
-[data-group]:focus~.progress-clock__rings [data-units],
-[data-group]:hover~.progress-clock__rings [data-units] {
+[data-group]:focus ~ .progress-clock__rings [data-units],
+[data-group]:hover ~ .progress-clock__rings [data-units] {
   opacity: 0.2;
 }
 
-[data-group="d"]:focus~.progress-clock__rings [data-units="d"],
-[data-group="d"]:hover~.progress-clock__rings [data-units="d"],
-[data-group="h"]:focus~.progress-clock__rings [data-units="h"],
-[data-group="h"]:hover~.progress-clock__rings [data-units="h"],
-[data-group="m"]:focus~.progress-clock__rings [data-units="m"],
-[data-group="m"]:hover~.progress-clock__rings [data-units="m"],
-[data-group="s"]:focus~.progress-clock__rings [data-units="s"],
-[data-group="s"]:hover~.progress-clock__rings [data-units="s"] {
+[data-group='d']:focus ~ .progress-clock__rings [data-units='d'],
+[data-group='d']:hover ~ .progress-clock__rings [data-units='d'],
+[data-group='h']:focus ~ .progress-clock__rings [data-units='h'],
+[data-group='h']:hover ~ .progress-clock__rings [data-units='h'],
+[data-group='m']:focus ~ .progress-clock__rings [data-units='m'],
+[data-group='m']:hover ~ .progress-clock__rings [data-units='m'],
+[data-group='s']:focus ~ .progress-clock__rings [data-units='s'],
+[data-group='s']:hover ~ .progress-clock__rings [data-units='s'] {
   opacity: 1;
 }
 
@@ -430,7 +426,7 @@ const ProgressClock = (qs:any)=>{
 }
 </style>
 <style lang="scss" module>
-._layouts_slot{
+._layouts_slot {
   margin-top: 1.25rem;
   min-height: calc(100vh - 150px) !important;
 }

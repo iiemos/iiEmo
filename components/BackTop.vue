@@ -6,8 +6,7 @@ let goBack = function () {
   else window.requestAnimationFrame(toTop)
 }
 const toTop = function () {
-  const currentPosition =
-    document.documentElement.scrollTop || document.body.scrollTop
+  const currentPosition = document.documentElement.scrollTop || document.body.scrollTop
   const position = Math.floor(currentPosition / 1.3)
   if (currentPosition <= 0) return
   window.scrollTo(0, position)
@@ -16,20 +15,14 @@ const toTop = function () {
 onMounted(() => {
   const BODY = document.querySelector('body')
   BODY.onscroll = function () {
-    if ((document.documentElement.scrollTop || document.body.scrollTop) >= 1000)
-      isShowBackTop.value = true
+    if ((document.documentElement.scrollTop || document.body.scrollTop) >= 1000) isShowBackTop.value = true
     else isShowBackTop.value = false
   }
 })
 </script>
 
 <template>
-  <div
-    v-show="isShowBackTop"
-    :class="$style['_back_top']"
-    class=""
-    @click="goBack"
-  >
+  <div v-show="isShowBackTop" :class="$style['_back_top']" class="" @click="goBack">
     <div :class="$style['_bg_bar']">
       <div :class="$style['_bar']">🖕</div>
     </div>

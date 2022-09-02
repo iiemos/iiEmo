@@ -2,13 +2,12 @@
 // import { ElPagination } from 'element-plus'
 import { randomColor } from '@/utlis/global'
 import { storeToRefs } from 'pinia'
-let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore()) 
+let { isHorizontal, isAnimation } = storeToRefs(iiemoStore())
 // const { data } = await useAsyncData(() => queryContent('/').find())
 // const types = data.value.map((i)=> i.summary.type ) // 获取type
 // const newTypes = Array.from(new Set(types)) // 去重
 // let typeList = newTypes.map((s)=>{ return { id: s, list: [] } } )
 // data.value.forEach((i)=>{ typeList.forEach((e)=>{ if( e.id == i.summary.type ) e.list.push(i) }) })
-
 </script>
 
 <template>
@@ -24,30 +23,16 @@ let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore())
         </div>
       </ContentNavigation> -->
     </div>
-    <div
-      :class="[$style['pen_card'], [isHorizontal ? $style['_h'] : '']]"
-      class="container mx-auto mb-6 px-6"
-    >
+    <div :class="[$style['pen_card'], [isHorizontal ? $style['_h'] : '']]" class="container mx-auto mb-6 px-6">
       <ContentList path="/" v-slot="{ list }">
-        <nuxt-link
-          v-for="cItem in list"
-          :key="cItem._id"
-          :to="cItem._path"
-          :class="[$style['pen_card_item'], isAnimation ? 'listLeftIn' : '']"
-          class="py-4 shadow-md p-4 rounded"
-        >
+        <nuxt-link v-for="cItem in list" :key="cItem._id" :to="cItem._path" :class="[$style['pen_card_item'], isAnimation ? 'listLeftIn' : '']" class="py-4 shadow-md p-4 rounded">
           <div :class="$style['_text_warp']">
             <div :class="$style['_item_top']" class="pb-3">
               <div :class="$style['_item_top_l']" class="">
-                <span
-                  :class="$style['_type']"
-                  class="mr-3 px-2 py-1 text-sm rounded"
-                  :style="{ background: randomColor() }"
-                >
+                <span :class="$style['_type']" class="mr-3 px-2 py-1 text-sm rounded" :style="{ background: randomColor() }">
                   {{ cItem.summary.type }}
                 </span>
-                <span :class="$style['_time']" class="text-sm">
-                {{ cItem.summary.createtime }}</span>
+                <span :class="$style['_time']" class="text-sm"> {{ cItem.summary.createtime }}</span>
               </div>
               <div :class="$style['_title']" class="text-2xl mt-2">
                 {{ cItem.summary.title }}
@@ -58,7 +43,6 @@ let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore())
             </div>
           </div>
           <div :class="$style['_img_warp']" class="mt-2">
-            
             <img v-if="cItem.summary.pic" :src="cItem.summary.pic" />
             <div v-else :style="{ background: randomColor() }" :class="$style['_img_nopic']">{{ cItem.summary.tags }}</div>
           </div>
@@ -183,7 +167,7 @@ let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore())
       align-items: center;
       flex-direction: row-reverse;
     }
-    ._img_nopic{
+    ._img_nopic {
       font-size: 1.2rem;
     }
     ._text_warp {
@@ -208,14 +192,13 @@ let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore())
   justify-content: space-between;
   border-radius: 5px;
   margin-bottom: 2rem;
-  transition: transform 0.3s ease-in-out, translateY 0.3s ease-in-out,
-    box-shadow 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, translateY 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgb(84 81 81 / 15%);
     z-index: 1;
     ._img_warp {
-      ._img_nopic{
+      ._img_nopic {
         color: #fff;
       }
     }
@@ -224,7 +207,7 @@ let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore())
 ._text_warp {
   display: flex;
   flex-direction: column;
-  ._type{
+  ._type {
     color: #fff;
   }
 }
@@ -240,7 +223,7 @@ let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore())
   border-radius: 6px;
   overflow: hidden;
   height: 100%;
-  ._img_nopic{
+  ._img_nopic {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -249,7 +232,7 @@ let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore())
     font-size: 1.7rem;
     color: #ffffff69;
   }
-  img{
+  img {
     width: 100%;
     height: 100%;
   }
@@ -266,19 +249,19 @@ let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore())
     height: 307px;
   }
 }
-@media (max-width: 1536px) and (min-width: 1440px){
+@media (max-width: 1536px) and (min-width: 1440px) {
   ._img_warp {
     width: 404px;
     height: 286px;
   }
 }
-@media (max-width: 1440px) and (min-width: 976px){
+@media (max-width: 1440px) and (min-width: 976px) {
   ._img_warp {
     width: 258px;
     height: 183px;
   }
 }
-@media (max-width: 976px) and (min-width: 768px){
+@media (max-width: 976px) and (min-width: 768px) {
   ._img_warp {
     width: 192px;
     height: 137px;
@@ -286,10 +269,10 @@ let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore())
 }
 
 @media (max-width: 768px) and (min-width: 100px) {
-  .home_type{
+  .home_type {
     padding: 0 20px;
   }
-  .pen_card{
+  .pen_card {
     flex-direction: column;
     .pen_card_item {
       flex-direction: column-reverse;
@@ -304,7 +287,7 @@ let  { isHorizontal, isAnimation } = storeToRefs(iiemoStore())
       height: 160px;
       border-radius: 10px;
       flex-shrink: 0;
-      ._img_nopic{
+      ._img_nopic {
         font-size: 1.3rem;
       }
       img {

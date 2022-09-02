@@ -12,20 +12,13 @@ const { logo, shortName, footer } = publics
           <span>{{ shortName }}</span>
         </nuxt-link>
         <nav :class="$style['iiemo_nav']" class="">
-          <nuxt-link
-            :to="item.link"
-            :class="$style['iiemo_nav_item']"
-            class="px-3"
-            v-for="item in footer.nav"
-            :key="item.name"
-          >
+          <nuxt-link :to="item.link" :class="$style['iiemo_nav_item']" class="px-3" v-for="item in footer.nav" :key="item.name">
             {{ item.name }}
           </nuxt-link>
         </nav>
       </div>
       <div :class="$style['iiemo_foot_r']">
-        <a :href="footer.copyright.beianLink" :class="$style['iiemo_beian']" target="_blank" class="mr-3">
-        {{ footer.copyright.beian }}</a>
+        <a :href="footer.copyright.beianLink" :class="$style['iiemo_beian']" target="_blank" class="mr-3"> {{ footer.copyright.beian }}</a>
         {{ footer.copyright.desc }}
       </div>
     </div>
@@ -72,15 +65,16 @@ const { logo, shortName, footer } = publics
 }
 
 @media screen and (max-width: 768px) {
-  .iiemo_footer{
+  .iiemo_footer {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  .iiemo_foot_l{
+  .iiemo_foot_l {
     justify-content: center;
   }
 
-  .iiemo_nav,.iiemo_foot_r{
+  .iiemo_nav,
+  .iiemo_foot_r {
     display: none;
   }
 }
