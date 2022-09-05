@@ -111,6 +111,10 @@ const changeMeun = () => {
   display: flex;
   align-items: center;
   height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 111;
+  background: #ffffffad;
 }
 .iiemo_head_warp {
   display: flex;
@@ -291,6 +295,7 @@ const changeMeun = () => {
   .iiemo_head {
     padding-left: 1rem;
     padding-right: 1rem;
+    height: 56px;
   }
 
   .mobile_meun {

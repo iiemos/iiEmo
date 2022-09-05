@@ -6,7 +6,7 @@ description: 'Electron Module format cjs does not support top-level await. Use t
 summary:
   title: 'Electron import.meta.glob异步引入模块报错'
   type: '学习笔记'
-  icon: '🥝'
+  icon: '🍑'
   desc: 'Electron Module format cjs does not support top-level await. Use the "es" or "system" output formats rather'
   tags: 'Vite import'
   createtime: '2022-09-01'
