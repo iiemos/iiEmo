@@ -1,4 +1,4 @@
-export default{
+export default {
   /*
     镜像站 #b275ff 紫色
     普通友链 #00d8a9 绿色
@@ -13,8 +13,17 @@ export default{
       lab: '运维',
       color: '#eea900',
       addTime: '2022-08-03',
-      link: 'https://cakepanit.com'
-    }
+      link: 'https://cakepanit.com',
+    },
+    {
+      name: 'Queque',
+      desc: '后端工程师',
+      logo: 'https://www.quewaner.com/img/avatar.png',
+      lab: '.NET',
+      color: '#eea900',
+      addTime: '2022-08-03',
+      link: 'https://www.quewaner.com',
+    },
   ],
   mirrorSite: [
     {
@@ -24,7 +33,7 @@ export default{
       lab: '镜像站',
       color: '#b275ff',
       addTime: '2022-08-03',
-      link: 'https://mirrors.huaweicloud.com'
+      link: 'https://mirrors.huaweicloud.com',
     },
     {
       name: '阿里云',
@@ -33,7 +42,7 @@ export default{
       lab: '镜像站',
       color: '#b275ff',
       addTime: '2022-08-03',
-      link: 'https://developer.aliyun.com'
+      link: 'https://developer.aliyun.com',
     },
     {
       name: '网易',
@@ -42,7 +51,7 @@ export default{
       lab: '镜像站',
       color: '#b275ff',
       addTime: '2022-08-03',
-      link: 'https://mirrors.163.com'
+      link: 'https://mirrors.163.com',
     },
     {
       name: '清华大学',
@@ -51,7 +60,7 @@ export default{
       lab: '镜像站',
       color: '#b275ff',
       addTime: '2022-08-03',
-      link: 'https://mirrors.tuna.tsinghua.edu.cn/'
+      link: 'https://mirrors.tuna.tsinghua.edu.cn/',
     },
     {
       name: '浙江大学',
@@ -60,7 +69,7 @@ export default{
       lab: '镜像站',
       color: '#b275ff',
       addTime: '2022-08-03',
-      link: 'https://mirrors.zju.edu.cn/'
+      link: 'https://mirrors.zju.edu.cn/',
     },
     {
       name: '中国科技大学',
@@ -69,7 +78,7 @@ export default{
       lab: '镜像站',
       color: '#b275ff',
       addTime: '2022-08-03',
-      link: 'https://mirrors.ustc.edu.cn/'
+      link: 'https://mirrors.ustc.edu.cn/',
     },
-  ]
+  ],
 }

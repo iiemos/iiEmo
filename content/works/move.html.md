@@ -1,10 +1,10 @@
 ---
-title: 'Move 学习总结'
+title: 'Move 学习指南'
 keywords: '一朵大呲花,IT博客,技术博客,区块链博客'
-description: 'Move 浅尝'
+description: 'Move 学习记录'
 
 summary:
-  title: 'Move 浅尝'
+  title: 'Move 学习指南'
   type: '开发笔记'
   icon: '🍉'
   desc: 'Move - 牛刀小试'
