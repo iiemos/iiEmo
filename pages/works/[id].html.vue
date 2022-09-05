@@ -1,5 +1,4 @@
-<script setup>
-</script>
+<script setup></script>
 <template>
   <NuxtLayout>
     <div :class="$style['_essay_ctx']" class="mx-auto">

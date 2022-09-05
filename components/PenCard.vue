@@ -220,6 +220,7 @@ let { isHorizontal, isAnimation } = storeToRefs(iiemoStore())
   justify-content: space-between;
 }
 ._img_warp {
+  margin: 0 auto;
   border-radius: 6px;
   overflow: hidden;
   height: 100%;
