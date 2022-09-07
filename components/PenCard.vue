@@ -178,6 +178,7 @@ let { isHorizontal, isAnimation } = storeToRefs(iiemoStore())
       height: 160px;
       border-radius: 10px;
       flex-shrink: 0;
+      margin: 0;
       img {
         width: 240px;
         height: 160px;
