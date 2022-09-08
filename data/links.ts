@@ -21,7 +21,7 @@ export default {
       logo: 'https://www.quewaner.com/img/avatar.png',
       lab: '.NET',
       color: '#eea900',
-      addTime: '2022-08-03',
+      addTime: '2022-09-05',
       link: 'https://www.quewaner.com',
     },
   ],

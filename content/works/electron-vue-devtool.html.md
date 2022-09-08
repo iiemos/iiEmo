@@ -6,7 +6,7 @@ description: 'Electron vue-devtools 安装'
 summary:
   title: 'Electron vue-devtools 安装'
   type: '学习笔记'
-  icon: '🥝'
+  icon: '🍍'
   desc: 'Electron [vue-devtools] 安装避坑指南'
   tags: 'Electron + vue-devtools'
   createtime: '2022-08-01'
