@@ -6,9 +6,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 const lifecycle = process.env.npm_lifecycle_event
 export default defineNuxtConfig({
   meta: {
-    script: [
-      { src: 'https://pv.sohu.com/cityjson?ie=utf-8', charset: 'utf-8' },
-    ],
+    script: [{ src: 'https://pv.sohu.com/cityjson?ie=utf-8', charset: 'utf-8' }],
   },
   pages: true,
   css: ['@/assets/scss/index.scss'],
