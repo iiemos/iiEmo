@@ -3,6 +3,8 @@ title: 'Electron Module format cjs does not support top-level await. Use the "es
 keywords: '一朵大呲花,IT博客,技术博客,区块链博客'
 description: 'Electron Module format cjs does not support top-level await. Use the "es" or "system" output formats rather'
 
+layout: 'markdown-full'
+
 summary:
   title: 'Electron import.meta.glob异步引入模块报错'
   type: '学习笔记'

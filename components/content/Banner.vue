@@ -26,6 +26,7 @@ nextTick(() => {
   align-items: center;
   justify-content: center;
 }
+
 .banner_canvas {
   background: linear-gradient(#d3f2c8, #fffffb);
   width: 100%;
@@ -36,6 +37,9 @@ nextTick(() => {
   right: 0;
   bottom: 0;
   z-index: 1;
+}
+.dark .banner_canvas {
+  background: linear-gradient(#1d1d1d, #fffffb);
 }
 .home_banner_txt {
   position: relative;

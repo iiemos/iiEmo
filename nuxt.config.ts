@@ -4,32 +4,32 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 const lifecycle = process.env.npm_lifecycle_event
+// https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
   meta: {
     script: [
       { src: 'https://pv.sohu.com/cityjson?ie=utf-8', charset: 'utf-8' },
     ],
   },
-  pages: true,
+  modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@vueuse/nuxt', '@pinia/nuxt', 'nuxt-icon'],
   css: ['@/assets/scss/index.scss'],
-  modules: ['@nuxt/content'],
-  // build
+  // https://color-mode.nuxtjs.org
+  colorMode: {
+    classSuffix: '',
+  },
   build: {
-    // analyze: {
-    //   analyzerMode: 'static'
-    // },
     transpile: lifecycle === 'build' ? ['element-plus'] : [],
   },
-  buildModules: ['nuxt-windicss', '@vueuse/nuxt', '@pinia/nuxt'],
+  // https://content.nuxtjs.org
   content: {
-    // documentDriven: true, // 文档驱动时启动
+    documentDriven: true,
     navigation: {
       fields: ['author', 'publishedAt'],
     },
     highlight: {
       // See the available themes on https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-theme
+      // theme: 'dracula',
       theme: 'one-dark-pro',
-      preload: ['html', 'css', 'ts', 'js', 'vue', 'r'],
     },
   },
   vite: {
@@ -50,12 +50,5 @@ export default defineNuxtConfig({
       }),
       visualizer,
     ],
-  },
-  typescript: {
-    tsConfig: {
-      compilerOptions: {
-        types: ['@pinia/nuxt'],
-      },
-    },
   },
 })

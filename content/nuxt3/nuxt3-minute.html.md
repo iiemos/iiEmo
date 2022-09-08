@@ -3,9 +3,11 @@ title: 'Nuxt3 踩坑记录'
 keywords: '一朵大呲花,IT博客,技术博客,区块链博客'
 description: 'Nuxt3 踩坑记录'
 
+layout: 'markdown-full'
+
 summary:
   title: 'Nuxt3 踩坑记录'
-  type: '开发笔记'
+  type: 'Nuxt3'
   icon: '🍉'
   desc: 'Nuxt3 - 博客搭建路程'
   tags: 'Nuxt3'
@@ -68,7 +70,7 @@ yarn dev -o || npm run dev -- -o || pnpm run dev -o
 ## 项目中使用 element-plus+
 
 - 安装依赖项
-
+- 
 ```javascript
 
 yarn add element-plus || npm install element-plus

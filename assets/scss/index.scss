@@ -1,6 +1,16 @@
 @import 'element-plus/dist/index.css';
 @import './monokai.scss';
 
+.dark {
+  --themeBgcolor: #1D1D1D;
+  --themeTextColor: #FFFFFF;
+  --themeCodeBgColor: #ffffff3b;
+  --themeMarkdownColor: #FFFFFF;
+  --themeMarkBgdownColor: #ffffff3b;
+  --themeMarkdownBorderColor: #a2a2a2;
+  --themeBannerColor: #1D1D1D;
+}
+
 html,
 body,
 #app {

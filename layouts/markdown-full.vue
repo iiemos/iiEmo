@@ -258,7 +258,6 @@ const ProgressClock = (qs: any) => {
     }
   }
   clearInterval(updateTimeout.value)
-  // updateTimeout.value = setTimeout(update.bind(this), 1e3)
   updateTimeout.value = setInterval(() => {
     update()
   }, 1000)
@@ -266,152 +265,24 @@ const ProgressClock = (qs: any) => {
 }
 </script>
 <template>
-  <div class="_layouts">
-    <NuxtLoadingIndicator />
-    <Header />
+<div class="_layouts">
+  <NuxtLoadingIndicator />
+  <Header />
     <section class="_layouts_slot">
-      <slot />
+      <div class="_essay_ctx mx-auto">
+        <div class="_markdown_body">
+          <slot />
+        </div>
+      </div>
       <BackTop />
     </section>
-    <Footer />
-  </div>
+  <Footer />
+</div>
 </template>
 <style>
-.el-notification {
-  padding: 14px;
+._essay_ctx {
+  max-width: 800px;
 }
-.el-notification__group {
-  width: 90%;
-}
-.nottion_warp {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.nottion_tlt {
-  margin-bottom: 10px;
-}
-.progress-clock {
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  position: relative;
-  text-align: center;
-  width: 16em;
-  height: 16em;
-}
-
-.progress-clock__time-date,
-.progress-clock__time-digit,
-.progress-clock__time-colon,
-.progress-clock__time-ampm {
-  transition: color 0.2s linear;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-  z-index: 1;
-  position: relative;
-}
-
-.progress-clock__time-date,
-.progress-clock__time-digit {
-  background: transparent;
-}
-
-.progress-clock__time-date,
-.progress-clock__time-ampm {
-  grid-column: 1 / 6;
-}
-
-.progress-clock__time-date {
-  font-size: 0.75em;
-  line-height: 1.33;
-}
-
-.progress-clock__time-digit,
-.progress-clock__time-colon {
-  font-size: 2em;
-  font-weight: 400;
-  grid-row: 2;
-}
-
-.progress-clock__time-colon {
-  line-height: 1.275;
-}
-
-.progress-clock__time-ampm {
-  cursor: default;
-  grid-row: 3;
-}
-
-.progress-clock__rings {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
-.progress-clock__ring {
-  opacity: 0.1;
-}
-
-.progress-clock__ring-fill {
-  transition: opacity 0s 0.3s linear, stroke-dashoffset 0.3s ease-in-out;
-}
-
-.progress-clock__ring-fill--360 {
-  opacity: 0;
-  stroke-dashoffset: 0;
-  transition-duration: 0.3s;
-}
-
-[data-group]:focus {
-  outline: transparent;
-}
-
-[data-units] {
-  transition: opacity 0.2s linear;
-}
-
-[data-group='d']:focus,
-[data-group='d']:hover {
-  color: hsl(333, 90%, 55%);
-}
-
-[data-group='h']:focus,
-[data-group='h']:hover {
-  color: hsl(33, 90%, 55%);
-}
-
-[data-group='m']:focus,
-[data-group='m']:hover {
-  color: hsl(213, 90%, 55%);
-}
-
-[data-group='s']:focus,
-[data-group='s']:hover {
-  color: hsl(273, 90%, 55%);
-}
-
-[data-group]:focus ~ .progress-clock__rings [data-units],
-[data-group]:hover ~ .progress-clock__rings [data-units] {
-  opacity: 0.2;
-}
-
-[data-group='d']:focus ~ .progress-clock__rings [data-units='d'],
-[data-group='d']:hover ~ .progress-clock__rings [data-units='d'],
-[data-group='h']:focus ~ .progress-clock__rings [data-units='h'],
-[data-group='h']:hover ~ .progress-clock__rings [data-units='h'],
-[data-group='m']:focus ~ .progress-clock__rings [data-units='m'],
-[data-group='m']:hover ~ .progress-clock__rings [data-units='m'],
-[data-group='s']:focus ~ .progress-clock__rings [data-units='s'],
-[data-group='s']:hover ~ .progress-clock__rings [data-units='s'] {
-  opacity: 1;
-}
-
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -429,3 +300,4 @@ const ProgressClock = (qs: any) => {
   /* min-height: calc(100vh - 166px) !important; */
 }
 </style>
+

@@ -3,14 +3,16 @@ title: 'Move 学习指南'
 keywords: '一朵大呲花,IT博客,技术博客,区块链博客'
 description: 'Move 学习记录'
 
+layout: 'markdown-full'
+
 summary:
   title: 'Move 学习指南'
-  type: '学习笔记'
+  type: 'Move'
   icon: '🍉'
   desc: 'Move - 牛刀小试'
   tags: 'Move'
-  createtime: '2022-09-05'
-  pic: ''
+  createtime: '2022-08-01'
+  pic: '/img/pic/nuxt3_icon.jpg'
 ---
 
 # 为什么要学习Move

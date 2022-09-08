@@ -3,6 +3,8 @@ title: 'Markdown 语法大全'
 keywords: '一朵大呲花,IT博客,技术博客,区块链博客'
 description: 'Markdown 语法大全'
 
+layout: 'markdown-full'
+
 summary:
   title: 'Markdown 语法大全'
   type: '便捷工具'
