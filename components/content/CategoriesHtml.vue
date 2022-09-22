@@ -34,12 +34,20 @@ useHead({
     <el-timeline :class="$style['_categs_timeline']">
       <el-timeline-item v-for="item in typeList" :key="item.id" :timestamp="item.id" placement="top" size="normal" type="primary" :hollow="true">
         <nuxt-link v-for="itemlist in item.list" :key="itemlist._path" :to="itemlist._path" :class="$style['_categs_link']">
-          <span :class="$style['_categs_tags']" :style="{ background: randomColor() }">{{ itemlist.summary.icon }} {{ itemlist.summary.tags }}</span> {{ itemlist.summary.desc }}
+          <span :class="$style['_categs_tags']" :style="{ background: randomColor() }">{{ itemlist.summary.icon }} {{ itemlist.summary.tags }}</span>
+          <span class="dark:text-primary-50">
+            {{ itemlist.summary.desc }}
+          </span>
         </nuxt-link>
       </el-timeline-item>
     </el-timeline>
   </div>
 </template>
+<style>
+.el-timeline-item__timestamp {
+  /* color: ; */
+}
+</style>
 <style lang="scss" module>
 ._categs_ctx {
   max-width: 800px;

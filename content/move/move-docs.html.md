@@ -8,11 +8,11 @@ layout: 'markdown-full'
 summary:
   title: 'Move 学习指南'
   type: 'Move'
-  icon: '🍉'
+  icon: '🌰'
   desc: 'Move - 牛刀小试'
   tags: 'Move'
   createtime: '2022-08-01'
-  pic: '/img/pic/nuxt3_icon.jpg'
+  pic: ''
 ---
 
 # 为什么要学习Move

@@ -7,9 +7,7 @@ const lifecycle = process.env.npm_lifecycle_event
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
   meta: {
-    script: [
-      { src: 'https://pv.sohu.com/cityjson?ie=utf-8', charset: 'utf-8' },
-    ],
+    script: [{ src: 'https://pv.sohu.com/cityjson?ie=utf-8', charset: 'utf-8' }],
   },
   modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@vueuse/nuxt', '@pinia/nuxt', 'nuxt-icon'],
   css: ['@/assets/scss/index.scss'],
