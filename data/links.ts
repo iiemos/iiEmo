@@ -27,7 +27,8 @@ export default {
     {
       name: 'SunSeekerX',
       desc: '这条路才刚刚开始啊~',
-      logo: 'https://static.yoouu.cn/imgs/doc/misc/logo.jpg',
+      // logo: 'https://static.yoouu.cn/imgs/doc/misc/logo.jpg',
+      logo: 'https://sdn.geekzu.org/avatar/235ea9ec97427acb0cbaf8f6788ef4c6?size=500%7C',
       lab: '全栈',
       color: '#eea900',
       addTime: '2022-10-25',
