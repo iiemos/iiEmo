@@ -24,6 +24,15 @@ export default {
       addTime: '2022-08-03',
       link: 'https://www.quewaner.com',
     },
+    {
+      name: 'SunSeekerX',
+      desc: '这条路才刚刚开始啊~',
+      logo: 'https://gravatar.loli.net/avatar/235ea9ec97427acb0cbaf8f6788ef4c6?size=500%7C',
+      lab: '全栈',
+      color: '#eea900',
+      addTime: '2022-10-25',
+      link: 'https://yoouu.cn/',
+    },
   ],
   mirrorSite: [
     {
