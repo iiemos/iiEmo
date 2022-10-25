@@ -8,7 +8,7 @@ const { logo, shortName, footer } = publics
     <div :class="$style['iiemo_footer_warp']" class="container mx-auto">
       <div :class="$style['iiemo_foot_l']">
         <nuxt-link to="/" :class="$style['iiemo_logo']" class="">
-          <img :src="logo" alt="iiEmo 一朵大呲花 🍀" />
+          <img class="_logo_img" :src="logo" alt="iiEmo 一朵大呲花 🍀" />
           <span>{{ shortName }}</span>
         </nuxt-link>
         <nav :class="$style['iiemo_nav']" class="">
