@@ -54,6 +54,7 @@
     margin-right: 0.4em;
     font-weight: bolder;
   }
+ 
   h2 {
     font-size: 1.2em;
   }
@@ -66,6 +67,7 @@
   ol li, ul li {
     margin-bottom: 0;
     padding-left: 0.2em;
+    list-style: outside;
   }
   ol li::marker, ul li::marker {
     color: #a862ea;

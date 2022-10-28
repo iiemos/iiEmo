@@ -265,9 +265,9 @@ const ProgressClock = (qs: any) => {
 }
 </script>
 <template>
-<div class="_layouts">
-  <NuxtLoadingIndicator />
-  <Header />
+  <div class="_layouts">
+    <NuxtLoadingIndicator />
+    <Header />
     <section class="_layouts_slot">
       <div class="_essay_ctx mx-auto">
         <div class="_markdown_body">
@@ -276,12 +276,12 @@ const ProgressClock = (qs: any) => {
       </div>
       <BackTop />
     </section>
-  <Footer />
-</div>
+    <Footer />
+  </div>
 </template>
 <style>
 ._essay_ctx {
-  max-width: 800px;
+  max-width: 1000px;
 }
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
@@ -300,4 +300,3 @@ const ProgressClock = (qs: any) => {
   /* min-height: calc(100vh - 166px) !important; */
 }
 </style>
-
