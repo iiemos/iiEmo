@@ -18,7 +18,7 @@ const { logo, shortName, footer } = publics
         </nav> -->
       </div>
       <a :class="$style['iiemo_footer_cdn']" href="">
-        本网站由 <img :class="$style['cdn_logo']" src="/public/img/cdn/cdn_logo8.svg" alt=""> 提供CDN加速
+        本网站由 <img :class="$style['cdn_logo']" src="/img/cdn/cdn_logo8.svg" alt=""> 提供CDN加速
       </a>
       <div :class="$style['iiemo_foot_r']">
         <a :href="footer.copyright.beianLink" :class="$style['iiemo_beian']" target="_blank" class="mr-3"> {{ footer.copyright.beian }}</a>
