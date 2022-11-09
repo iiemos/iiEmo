@@ -82,8 +82,7 @@ export default {
       { name: '隐私', link: '/about.html' },
     ],
     copyright: {
-      // beian: '沪ICP备19036122号',
-      beian: '',
+      beian: '豫ICP备2022025751号',
       beianLink: 'https://beian.miit.gov.cn/',
       desc: 'iiEmo.com © 2022. All rights reserved.',
     },

@@ -69,13 +69,22 @@ const { logo, shortName, footer } = publics
     padding-left: 1rem;
     padding-right: 1rem;
   }
+  .iiemo_footer_warp{
+    flex-direction: column;
+  }
   .iiemo_foot_l {
     justify-content: center;
   }
 
-  .iiemo_nav,
-  .iiemo_foot_r {
+  .iiemo_nav{
     display: none;
+  }
+  .iiemo_foot_r {
+    text-align: center;
+    margin-top: 10px;
+    .iiemo_beian{
+      display: block;
+    }
   }
 }
 </style>
