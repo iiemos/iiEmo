@@ -4,33 +4,47 @@ const { logo, shortName, footer } = publics
 </script>
 
 <template>
-  <footer :class="$style['iiemo_footer']" class="py-3">
-    <div :class="$style['iiemo_footer_warp']" class="container mx-auto">
+  <footer :class="$style['iiemo_footer']">
+    <div :class="$style['iiemo_footer_warp']" class="container mx-auto py-3">
       <div :class="$style['iiemo_foot_l']">
         <nuxt-link to="/" :class="$style['iiemo_logo']" class="">
           <img class="_logo_img" :src="logo" alt="iiEmo 一朵大呲花 🍀" />
           <span>{{ shortName }}</span>
         </nuxt-link>
-        <nav :class="$style['iiemo_nav']" class="">
+        <!-- <nav :class="$style['iiemo_nav']" class="">
           <nuxt-link :to="item.link" :class="$style['iiemo_nav_item']" class="px-3" v-for="item in footer.nav" :key="item.name">
             {{ item.name }}
           </nuxt-link>
-        </nav>
+        </nav> -->
       </div>
+      <a :class="$style['iiemo_footer_cdn']" href="">
+        本网站由 <img :class="$style['cdn_logo']" src="/public/img/cdn/cdn_logo8.svg" alt=""> 提供CDN加速
+      </a>
       <div :class="$style['iiemo_foot_r']">
         <a :href="footer.copyright.beianLink" :class="$style['iiemo_beian']" target="_blank" class="mr-3"> {{ footer.copyright.beian }}</a>
         {{ footer.copyright.desc }}
       </div>
     </div>
+
   </footer>
 </template>
 
 <style lang="scss" module>
 .iiemo_footer {
-  box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.05);
   // mix-blend-mode: hard-light;
 }
+.iiemo_footer_cdn{
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .cdn_logo{
+    margin: 0 10px; 
+    width: 70px;
+  }
+}
 .iiemo_footer_warp {
+  box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,7 +52,7 @@ const { logo, shortName, footer } = publics
 .iiemo_foot_l {
   display: flex;
   align-items: center;
-  flex: 1;
+  // flex: 1;
   gap: 2%;
 }
 .iiemo_logo {
@@ -58,6 +72,9 @@ const { logo, shortName, footer } = publics
   display: flex;
   align-items: center;
   font-weight: 400;
+  a{ 
+    display: block;
+  }
   .iiemo_nav_item {
   }
 }
@@ -78,6 +95,9 @@ const { logo, shortName, footer } = publics
 
   .iiemo_nav{
     display: none;
+  }
+  .iiemo_footer_cdn{
+    margin-top: 10px;
   }
   .iiemo_foot_r {
     text-align: center;
