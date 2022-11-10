@@ -17,9 +17,9 @@ const { logo, shortName, footer } = publics
           </nuxt-link>
         </nav> -->
       </div>
-      <a :class="$style['iiemo_footer_cdn']" href="">
-        本网站由 <img :class="$style['cdn_logo']" src="/img/cdn/cdn_logo8.svg" alt=""> 提供CDN加速
-      </a>
+      <div :class="$style['iiemo_footer_cdn']">
+        本网站由 <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="noopener noreferrer"> <img :class="$style['cdn_logo']" src="/img/cdn/cdn_logo8.svg" alt=""> </a>提供CDN加速
+      </div>
       <div :class="$style['iiemo_foot_r']">
         <a :href="footer.copyright.beianLink" :class="$style['iiemo_beian']" target="_blank" class="mr-3"> {{ footer.copyright.beian }}</a>
         {{ footer.copyright.desc }}
@@ -39,8 +39,8 @@ const { logo, shortName, footer } = publics
   align-items: center;
   justify-content: center;
   .cdn_logo{
-    margin: 0 10px; 
-    width: 70px;
+    margin: 0 6px; 
+    width: 60px;
   }
 }
 .iiemo_footer_warp {
