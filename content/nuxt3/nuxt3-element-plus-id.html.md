@@ -12,7 +12,7 @@ summary:
   desc: 'Nuxt3 ElementPlus Looks like you are using server rendering, you must provide a id provider to ensure the hydration process to be succeed'
   tags: 'Nuxt3 + ElementPlus ID Error'
   createtime: '2022-09-22'
-  pic: ''
+  pic: '/img/pic/nuxt3_icon.jpg'
 ---
 
 # 运行Nuxt3 项目时ElementPlus 报错： Looks like you are using server rendering, you must provide a id provider to ensure the hydration process to be succeed

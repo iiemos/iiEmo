@@ -12,7 +12,7 @@ summary:
   desc: 'Electron 使用 electron-updater 自动更新 - 全量更新'
   tags: 'Electron updater'
   createtime: '2022-10-27'
-  pic: ''
+  pic: '/img/pic/all_update.jpg'
 ---
 
 
