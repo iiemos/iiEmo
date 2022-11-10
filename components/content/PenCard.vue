@@ -1,27 +1,22 @@
 <script setup lang="ts">
 // import { ElPagination } from 'element-plus'
 import { ElSwitch } from 'element-plus'
+import moment from 'moment'
 import { randomColor } from '@/utlis/global'
 import MenuIcon from '@/components/icon/MenuIcon.vue'
 import ListIcon from '@/components/icon/ListIcon.vue'
 const isHorizontal: any = ref(false)
 const isAnimation: any = ref(false)
 const { data } = await useAsyncData(() => queryContent('/').find())
-const types = []
+const types:any = []
+
 data.value.forEach((i) => {
-  if (i?.summary?.type) {
-    return types.push(i.summary.type)
-  }
-}) // 获取type
-const newTypes = Array.from(new Set(types)) // 去重
-let typeList = newTypes.map((s) => {
-  return { id: s, list: [] }
+  if (i?.summary?.type) return types.push(i)
 })
-data.value.forEach((i) => {
-  typeList.forEach((e) => {
-    if (e.id == i?.summary?.type) e.list.push(i)
-  })
+types.sort((a, b) => {
+  return moment(b?.summary?.createtime).valueOf() - moment(a?.summary?.createtime).valueOf()
 })
+
 </script>
 
 <template>
@@ -46,37 +41,35 @@ data.value.forEach((i) => {
         </ContentNavigation> -->
     </div>
     <div :class="[$style['pen_card'], [isHorizontal ? $style['_h'] : '']]" class="container mx-auto mb-6 px-6">
-      <ContentList path="/" v-slot="{ list }">
-        <template v-for="cItem in list" :key="cItem._id">
-          <nuxt-link
-            v-if="cItem.summary && cItem.summary.type"
-            :to="cItem._path"
-            :class="[$style['pen_card_item'], isAnimation ? 'listLeftIn' : '']"
-            class="py-4 shadow-md p-4 rounded dark:bg-primary-800"
-          >
-            <div :class="$style['_text_warp']">
-              <div :class="$style['_item_top']" class="pb-3">
-                <div :class="$style['_item_top_l']" class="">
-                  <span :class="$style['_type']" class="mr-3 px-2 py-1 text-sm rounded" :style="{ background: randomColor() }">
-                    {{ cItem.summary.type }}
-                  </span>
-                  <span :class="$style['_time']" class="text-sm"> {{ cItem.summary.createtime }}</span>
-                </div>
-                <div :class="$style['_title']" class="text-2xl mt-2">
-                  {{ cItem.summary.title }}
-                </div>
+      <template v-for="cItem in types" :key="cItem._id">
+        <nuxt-link
+          v-if="cItem.summary && cItem.summary.type"
+          :to="cItem._path"
+          :class="[$style['pen_card_item'], isAnimation ? 'listLeftIn' : '']"
+          class="py-4 shadow-md p-4 rounded dark:bg-primary-800"
+        >
+          <div :class="$style['_text_warp']">
+            <div :class="$style['_item_top']" class="pb-3">
+              <div :class="$style['_item_top_l']" class="">
+                <span :class="$style['_type']" class="mr-3 px-2 py-1 text-sm rounded" :style="{ background: randomColor() }">
+                  {{ cItem.summary.type }}
+                </span>
+                <span :class="$style['_time']" class="text-sm"> {{ cItem.summary.createtime }}</span>
               </div>
-              <div :class="$style['_desc']" class="text-base mt-2">
-                {{ cItem.summary.desc }}
+              <div :class="$style['_title']" class="text-2xl mt-2">
+                {{ cItem.summary.title }}
               </div>
             </div>
-            <div :class="$style['_img_warp']" class="mt-2">
-              <img v-if="cItem.summary.pic" :src="cItem.summary.pic" />
-              <div v-else :style="{ background: randomColor() }" :class="$style['_img_nopic']">{{ cItem.summary.tags }}</div>
+            <div :class="$style['_desc']" class="text-base mt-2">
+              {{ cItem.summary.desc }}
             </div>
-          </nuxt-link>
-        </template>
-      </ContentList>
+          </div>
+          <div :class="$style['_img_warp']" class="mt-2">
+            <img v-if="cItem.summary.pic" :src="cItem.summary.pic" />
+            <div v-else :style="{ background: randomColor() }" :class="$style['_img_nopic']">{{ cItem.summary.tags }}</div>
+          </div>
+        </nuxt-link>
+      </template>
     </div>
   </div>
 </template>

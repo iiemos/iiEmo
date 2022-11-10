@@ -18,6 +18,7 @@
     "@tailwindcss/typography": "^0.5.7",
     "@vueuse/nuxt": "^9.1.0",
     "element-plus": "^2.2.16",
+    "moment": "^2.29.4",
     "nuxt-icon": "^0.1.4",
     "pinia": "^2.0.19",
     "rollup-plugin-visualizer": "^5.7.1",

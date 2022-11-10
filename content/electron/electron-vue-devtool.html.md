@@ -11,7 +11,7 @@ summary:
   icon: '🥝'
   desc: 'Electron [vue-devtools] 安装避坑指南'
   tags: 'Electron + vue-devtools'
-  createtime: '2022-08-01'
+  createtime: '2022-08-20'
   pic: '/img/pic/electron_vue_devtool.jpg'
 ---
 
