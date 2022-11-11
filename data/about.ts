@@ -1,11 +1,11 @@
 export default {
   title: 'iiEmo · 一朵大呲花',
-  slogin: ['只争朝夕，不负韶华', '孜孜不倦，认真且怂'],
+  slogin: ['林深时见鹿,海蓝时见鲸,梦醒时见你。', '孜孜不倦，认真且怂'],
   myCode: `
     const AboutUs = {
       name: 'iiEmo · 一朵大呲花',
-      email: 'i@iiemo.com',
-      position: 'Web Front-End Developer',
+      email: 'hj@iiemo.com',
+      position: '林深时见鹿,海蓝时见鲸,梦醒时见你。',
       website: 'https://iiemo.com'
     }
   `,

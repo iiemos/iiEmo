@@ -7,6 +7,15 @@ export default {
   */
   linkSite: [
     {
+      name: '一朵大呲花❀',
+      desc: '垃圾沪飘前端',
+      logo: 'https://www.iiemo.com/logo.png',
+      lab: '全栈',
+      color: '#eea900',
+      addTime: '2022-08-01',
+      link: 'https://www.iiemo.com',
+    },
+    {
       name: 'Maxbit',
       desc: '牛逼运维大佬',
       logo: 'https://cakepanit.com/img/avatar.jpg',
@@ -27,12 +36,20 @@ export default {
     {
       name: 'SunSeekerX',
       desc: '这条路才刚刚开始啊~',
-      // logo: 'https://static.yoouu.cn/imgs/doc/misc/logo.jpg',
       logo: 'https://cravatar.cn/avatar/235ea9ec97427acb0cbaf8f6788ef4c6?s=500',
       lab: '全栈',
       color: '#eea900',
       addTime: '2022-10-25',
       link: 'https://yoouu.cn/',
+    },
+    {
+      name: '淮城一只猫',
+      desc: '永远年轻，永远热泪盈眶！',
+      logo: 'https://cravatar.cn/avatar/4f6d6e259391f7b3d3ae8335a8cafeed?size=500',
+      lab: '牛逼个体户',
+      color: '#eea900',
+      addTime: '2022-11-11',
+      link: 'https://iiong.com',
     },
   ],
   mirrorSite: [

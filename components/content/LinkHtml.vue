@@ -13,7 +13,7 @@ const { linkSite, mirrorSite } = links
           :to="lItem.link"
           target="_blcak"
           :class="$style['_link_item']"
-          class="shadow-md px-4 py-4"
+          class="shadow-md px-4 py-4 mb-4"
           :style="{
             background: `linear-gradient(to right top,transparent,${lItem.color}14)`,
           }"
