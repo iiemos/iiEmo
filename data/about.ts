@@ -4,7 +4,7 @@ export default {
   myCode: `
     const AboutUs = {
       name: 'iiEmo · 一朵大呲花',
-      email: 'hj@iiemo.com',
+      email: 'i@iiemo.com',
       position: '林深时见鹿,海蓝时见鲸,梦醒时见你。',
       website: 'https://iiemo.com'
     }
