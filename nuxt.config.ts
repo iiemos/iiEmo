@@ -14,7 +14,8 @@ export default defineNuxtConfig({
   // https://color-mode.nuxtjs.org
   colorMode: {
     classSuffix: '',
-  },3   build: {
+  },
+  build: {
     transpile: lifecycle === 'build' ? ['element-plus'] : [],
   },
   // https://content.nuxtjs.org

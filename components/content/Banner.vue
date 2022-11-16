@@ -8,7 +8,7 @@ nextTick(() => {
 </script>
 <template>
   <div class="home_banner mb-6">
-    <canvas class="banner_canvas" id="banner_canvas"></canvas>
+    <div class="banner_canvas" id="banner_canvas"></div>
     <div class="home_banner_txt">
       <h1 class="text-5xl">{{ banner.name }}</h1>
       <p class="text-lg mt-4">{{ banner.desc }}</p>
