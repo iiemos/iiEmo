@@ -8,14 +8,14 @@ import ListIcon from '@/components/icon/ListIcon.vue'
 const isHorizontal: any = ref(false)
 const isAnimation: any = ref(false)
 const { data } = await useAsyncData(() => queryContent('/').find())
-const types:any = []
+// const types:any = []
 
-data.value.forEach((i) => {
-  if (i?.summary?.type) return types.push(i)
-})
-types.sort((a, b) => {
-  return moment(b?.summary?.createtime).valueOf() - moment(a?.summary?.createtime).valueOf()
-})
+// data.value.forEach((i) => {
+//   if (i?.summary?.type) return types.push(i)
+// })
+// types.sort((a, b) => {
+//   return moment(b?.summary?.createtime).valueOf() - moment(a?.summary?.createtime).valueOf()
+// })
 
 </script>
 
@@ -23,7 +23,7 @@ types.sort((a, b) => {
   <div class="">
     <div :class="$style['content_head']" class="container mx-auto mb-6 px-6 mt-10">
       <h5 class="text-xl fw-600">
-        全部文章 <span class="text-sm ml-1">({{ types.length }})</span>
+        <!-- 全部文章 <span class="text-sm ml-1">({{ types.length }})</span> -->
       </h5>
       <div :class="$style['content_switch']">
         <el-switch v-model="isHorizontal" size="default" :active-icon="ListIcon" :inactive-icon="MenuIcon" style="--el-switch-on-color: #13ce66" />
@@ -41,7 +41,38 @@ types.sort((a, b) => {
         </ContentNavigation> -->
     </div>
     <div :class="[$style['pen_card'], [isHorizontal ? $style['_h'] : '']]" class="container mx-auto mb-6 px-6">
-      <template v-for="cItem in types" :key="cItem._id">
+      <ContentList path="/" v-slot="{ list }">
+        <template v-for="cItem in list" :key="cItem._id">
+          <nuxt-link
+            v-if="cItem.summary && cItem.summary.type"
+            :to="cItem._path"
+            :class="[$style['pen_card_item'], isAnimation ? 'listLeftIn' : '']"
+            class="py-4 shadow-md p-4 rounded dark:bg-primary-800"
+          >
+            <div :class="$style['_text_warp']">
+              <div :class="$style['_item_top']" class="pb-3">
+                <div :class="$style['_item_top_l']" class="">
+                  <span :class="$style['_type']" class="mr-3 px-2 py-1 text-sm rounded" :style="{ background: randomColor() }">
+                    {{ cItem.summary.type }}
+                  </span>
+                  <span :class="$style['_time']" class="text-sm"> {{ cItem.summary.createtime }}</span>
+                </div>
+                <div :class="$style['_title']" class="text-2xl mt-2">
+                  {{ cItem.summary.title }}
+                </div>
+              </div>
+              <div :class="$style['_desc']" class="text-base mt-2">
+                {{ cItem.summary.desc }}
+              </div>
+            </div>
+            <div :class="$style['_img_warp']" class="mt-2">
+              <img v-if="cItem.summary.pic" :src="cItem.summary.pic" />
+              <div v-else :style="{ background: randomColor() }" :class="$style['_img_nopic']">{{ cItem.summary.tags }}</div>
+            </div>
+          </nuxt-link>
+        </template>
+      </ContentList>
+      <!-- <template v-for="cItem in types" :key="cItem._id">
         <nuxt-link
           v-if="cItem.summary && cItem.summary.type"
           :to="cItem._path"
@@ -69,7 +100,7 @@ types.sort((a, b) => {
             <div v-else :style="{ background: randomColor() }" :class="$style['_img_nopic']">{{ cItem.summary.tags }}</div>
           </div>
         </nuxt-link>
-      </template>
+      </template> -->
     </div>
   </div>
 </template>
