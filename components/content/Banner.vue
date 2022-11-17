@@ -18,6 +18,7 @@ nextTick(() => {
 
 <style lang="scss" scoped>
 .home_banner {
+  
   width: 100%;
   height: 400px;
   // height: calc(100vh - 100px);
