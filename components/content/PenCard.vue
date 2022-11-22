@@ -8,14 +8,14 @@ import ListIcon from '@/components/icon/ListIcon.vue'
 const isHorizontal: any = ref(false)
 const isAnimation: any = ref(false)
 const { data } = await useAsyncData(() => queryContent('/').find())
-// const types:any = []
+const types:any = []
 
-// data.value.forEach((i) => {
-//   if (i?.summary?.type) return types.push(i)
-// })
-// types.sort((a, b) => {
-//   return moment(b?.summary?.createtime).valueOf() - moment(a?.summary?.createtime).valueOf()
-// })
+data.value.forEach((i) => {
+  if (i?.summary?.type) return types.push(i)
+})
+types.sort((a, b) => {
+  return moment(b?.summary?.createtime).valueOf() - moment(a?.summary?.createtime).valueOf()
+})
 
 </script>
 
@@ -23,7 +23,7 @@ const { data } = await useAsyncData(() => queryContent('/').find())
   <div class="">
     <div :class="$style['content_head']" class="container mx-auto mb-6 px-6 mt-10">
       <h5 class="text-xl fw-600">
-        <!-- 全部文章 <span class="text-sm ml-1">({{ types.length }})</span> -->
+        全部文章 <span class="text-sm ml-1">({{ types.length }})</span>
       </h5>
       <div :class="$style['content_switch']">
         <el-switch v-model="isHorizontal" size="default" :active-icon="ListIcon" :inactive-icon="MenuIcon" style="--el-switch-on-color: #13ce66" />
